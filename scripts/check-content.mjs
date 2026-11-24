@@ -27,6 +27,16 @@ for (const field of ["tagline", "mission", "themes", "formats", "collaboration",
   if (n !== total) errors.push(`Marques : champ « ${field} » présent ${n} fois pour ${total} marques`);
 }
 
+// Sources : chaque production a un dossier ; une vidéo publiée exige un dossier vérifié.
+const prodTs = read("content/productions.ts");
+const srcTs = read("content/sources.ts");
+for (const m of prodTs.matchAll(/\n    slug: "([^"]+)",[\s\S]*?\n    status: "(soon|published)"/g)) {
+  const [, slug, status] = m;
+  const entry = srcTs.match(new RegExp(`\\n  ${slug}: \\{\\n    status: "(verified|review)"`));
+  if (!entry) errors.push(`Production « ${slug} » sans dossier de sources dans content/sources.ts`);
+  else if (status === "published" && entry[1] !== "verified") errors.push(`Production « ${slug} » publiée avec un dossier de sources non vérifié`);
+}
+
 if (errors.length) {
   console.error("Contrôle des contenus : " + errors.length + " problème(s)\n- " + errors.join("\n- "));
   process.exit(1);

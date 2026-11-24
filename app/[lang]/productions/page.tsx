@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getBrand } from "@/content/brands";
 import { href, routes, t, type Locale } from "@/content/i18n";
 import { formatDuration, productions } from "@/content/productions";
+import { sourceFile } from "@/content/sources";
 import { PageHeader } from "@/components/page-header";
 import { Picture } from "@/components/picture";
 import { VideoFacade } from "@/components/video-facade";
@@ -48,7 +49,9 @@ export default async function Productions({ params }: { params: Promise<{ lang: 
                       {p.status === "soon" ? d.common.soon : d.common.published}
                     </span>
                   </div>
-                  <h2 className="display mt-6 text-[clamp(2.3rem,4.4vw,4rem)]">{p.title[lang]}</h2>
+                  <h2 className="display mt-6 text-[clamp(2.3rem,4.4vw,4rem)]">
+                    {sourceFile(p.slug) ? <Link href={href(lang, `${routes.productions}/${p.slug}`)} className="hover:text-blanc/80">{p.title[lang]}</Link> : p.title[lang]}
+                  </h2>
                   <p className="mt-6 max-w-xl text-lg leading-relaxed text-blanc/75">{p.summary[lang]}</p>
                   <dl className="mt-10 grid max-w-xl grid-cols-3 gap-6 border-t border-blanc/15 pt-6 text-sm">
                     <div>
@@ -66,6 +69,11 @@ export default async function Productions({ params }: { params: Promise<{ lang: 
                       </div>
                     ) : null}
                   </dl>
+                  {sourceFile(p.slug) ? (
+                    <Link href={href(lang, `${routes.productions}/${p.slug}`)} className="mt-8 inline-flex items-center gap-2 text-sm font-semibold">
+                      <span className="link-underline">{d.sources.link}</span> <span aria-hidden>→</span>
+                    </Link>
+                  ) : null}
                   {p.links.length ? (
                     <ul className="mt-8 flex flex-wrap gap-3">
                       {p.links.map((l) => (

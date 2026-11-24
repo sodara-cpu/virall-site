@@ -33,6 +33,23 @@ fs.writeFileSync(
   ),
 );
 
+// Liens courts des descriptions vidéo : /s/<slug>/ -> /fr|en/productions/<slug>/ selon la langue du navigateur
+const prodDir = `${OUT}/fr/productions`;
+const slugs = fs.existsSync(prodDir) ? fs.readdirSync(prodDir, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name) : [];
+for (const slug of slugs) {
+  fs.mkdirSync(`${OUT}/s/${slug}`, { recursive: true });
+  fs.writeFileSync(
+    `${OUT}/s/${slug}/index.html`,
+    shell(
+      "Sources | VIRALL",
+      `<h1>Sources</h1><p><a href="${base}/fr/productions/${slug}/">Voir les sources</a> · <a href="${base}/en/productions/${slug}/" lang="en">See the sources</a></p>`,
+      `<link rel="canonical" href="https://virall.art/fr/productions/${slug}/">
+<script>var l=(navigator.languages&&navigator.languages[0]||navigator.language||"fr").toLowerCase();location.replace("${base}/"+(l.indexOf("fr")===0?"fr":"en")+"/productions/${slug}/");</script>
+<noscript><meta http-equiv="refresh" content="0;url=${base}/fr/productions/${slug}/"></noscript>`,
+    ),
+  );
+}
+
 fs.writeFileSync(`${OUT}/.nojekyll`, "");
 if (domain) fs.writeFileSync(`${OUT}/CNAME`, `${domain}\n`);
-console.log("postbuild ok", domain ? `(domaine ${domain})` : "");
+console.log("postbuild ok", domain ? `(domaine ${domain})` : "", `liens courts: ${slugs.map((s) => `/s/${s}/`).join(" ")}`);

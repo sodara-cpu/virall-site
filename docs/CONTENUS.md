@@ -60,3 +60,23 @@ Tous les textes hors marques et productions sont dans `content/i18n.ts`, partie 
 ## Ce qu'il ne faut pas publier
 
 Aucune information interne sur les outils de production, les automatisations, les coûts, les objectifs financiers ou une éventuelle cession des marques.
+
+## Dossiers de sources (une page par vidéo)
+
+Chaque production a une page publique de sources : `/fr/productions/<slug>/` et `/en/productions/<slug>/`, avec un lien court `https://virall.art/s/<slug>` qui choisit la langue du visiteur.
+
+**Règle de diffusion : toute vidéo publiée porte dans sa description la ligne `Sources : virall.art/s/<slug>`** (YouTube et Facebook : lien cliquable ; TikTok et Instagram : lien non cliquable, à doubler par le lien en bio).
+
+Procédure, avant chaque publication :
+
+1. Ajouter ou compléter l'entrée `<slug>` dans `content/sources.ts`, à partir du registre des faits de l'épisode :
+   - `established` : faits établis par les sources ;
+   - `debated` : points débattus (dates, chiffres, attributions) ;
+   - `legend` : éléments légendaires écartés ou signalés ;
+   - `simplifications` : ce que la vidéo ne raconte pas ou résume ;
+   - `reading` : l'interprétation présentée comme telle ;
+   - `openQuestions` : questions non tranchées ;
+   - `references` : type (`primaire`, `institution`, `encyclopedie`, `article`, `ouvrage`), auteur, titre, conteneur, année, URL, date de consultation.
+2. Passer `status` à `"verified"` une fois le dossier relu. `npm run check` bloque toute production `published` dont le dossier est encore en `"review"`, ainsi que toute production sans dossier.
+3. Déployer le site, vérifier que `virall.art/s/<slug>` ouvre la bonne page, puis seulement publier la vidéo.
+4. Toute correction ultérieure met à jour `updated` (date affichée sur la page).

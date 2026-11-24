@@ -10,7 +10,7 @@ export function ProductionCard({ p, lang, priority, delay = 0 }: { p: Production
   const duration = formatDuration(p.durationSec);
   return (
     <article data-reveal style={{ ["--reveal-delay" as string]: `${delay}ms` }} className="group relative">
-      <Link href={`${href(lang, routes.productions)}#${p.slug}`} className="block">
+      <Link href={href(lang, `${routes.productions}/${p.slug}`)} className="block">
         <div className="grain relative aspect-[9/14] overflow-hidden rounded-[2px] bg-encre-2">
           <Picture
             id={p.image}
