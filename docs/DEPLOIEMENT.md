@@ -42,6 +42,12 @@ Modifier sur `develop`, vérifier l'aperçu, puis fusionner dans `main`. Le site
 
 Dans l'onglet Actions, relancer le déploiement d'un ancien commit de `main` (« Re-run jobs »), ou annuler le dernier commit (`git revert`) et pousser.
 
+## Bascule effectuée le 24/11/2026
+
+GitHub Pages en mode GitHub Actions, domaine virall.art, HTTPS forcé. Zone DNS OVH modifiée : A et AAAA de la racine vers GitHub, `www` en CNAME vers sodara-cpu.github.io. MX, SPF, DKIM et validation Google inchangés.
+
+Anciennes valeurs, pour revenir à l'hébergement OVH si besoin : A `51.91.236.255` et AAAA `2001:41d0:301::29` sur la racine et sur `www`, TXT `www` « 3|welcome ».
+
 ## Après la bascule
 
 - L'hébergement web OVH n'est plus utilisé : il peut être résilié à son échéance (le domaine et la messagerie sont indépendants).
