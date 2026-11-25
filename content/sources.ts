@@ -224,21 +224,25 @@ export const sources: Record<string, SourceFile> = {
         "Le nombre de fusils pris aux Invalides : de 28 000 à plus de 30 000 selon les sources.",
         "Le bilan exact chez les assaillants (de 94 à 98 morts selon les décomptes) et chez les défenseurs tués après la reddition.",
         "L'heure de la reddition, située en fin d'après-midi (vers 17 h selon la plupart des récits).",
-        "La date d'entrée en fonction de De Launay : septembre 1775 selon la notice de la BnF, 1776 chez d'autres auteurs. La vidéo dit « depuis plus de dix ans ».",
+        "La date d'entrée en fonction de De Launay : septembre 1775 selon la notice de la BnF, 1776 chez d'autres auteurs.",
       ],
       en: [
         "The number of muskets taken at the Invalides: from 28,000 to over 30,000 depending on the source.",
         "The exact toll among the attackers (94 to 98 dead depending on the count) and among defenders killed after the surrender.",
         "The time of the surrender, placed in the late afternoon (around 5 pm in most accounts).",
-        "When de Launay took office: September 1775 according to the French National Library, 1776 in other accounts. The video says \"for more than ten years\".",
+        "When de Launay took office: September 1775 according to the French National Library, 1776 in other accounts.",
       ],
     },
     simplifications: {
       fr: [
+        "La vidéo dit que De Launay est tué « en chemin » vers l'Hôtel de Ville : il est en réalité tué devant l'Hôtel de Ville, avant d'avoir été jugé.",
+        "La vidéo dit que De Launay est gouverneur « depuis 1776 » : la BnF date son entrée en fonction de septembre 1775.",
         "Les journées du 12 et du 13 juillet (renvoi de Necker, pillages, formation d'une milice bourgeoise) sont résumées en une phrase.",
         "Les deux délégations de la matinée et la négociation autour des canons sont réunies en une seule.",
       ],
       en: [
+        "The video says de Launay was killed \"on the way\" to the Hôtel de Ville: he was in fact killed in front of the Hôtel de Ville, before being tried.",
+        "The video says de Launay had been governor \"since 1776\": the French National Library dates his appointment to September 1775.",
         "The days of 12 and 13 July (Necker's dismissal, looting, the forming of a citizens' militia) are summed up in one sentence.",
         "The morning's two delegations and the negotiation over the cannons are merged into one.",
       ],
