@@ -66,8 +66,8 @@ export const productions: Production[] = [
     slug: "mkwawa",
     brand: "epoques",
     title: {
-      fr: "Le crâne du traité de Versailles",
-      en: "The skull in the Treaty of Versailles",
+      fr: "Le traité de Versailles exigeait un crâne",
+      en: "The Treaty of Versailles demanded a skull",
     },
     summary: {
       fr: "En 1919, un article du traité de Versailles exige la restitution d'un crâne. Celui de Mkwawa, chef hehe qui avait tenu tête à l'armée coloniale allemande.",
@@ -86,8 +86,8 @@ export const productions: Production[] = [
     slug: "tewodros",
     brand: "epoques",
     title: {
-      fr: "La lettre restée sans réponse",
-      en: "The letter that was never answered",
+      fr: "La lettre sans réponse qui mena à la guerre",
+      en: "The unanswered letter that led to war",
     },
     summary: {
       fr: "Éthiopie, 1862. L'empereur Tewodros II écrit à la reine Victoria. La lettre reste sans réponse, et ce silence va mener à une guerre.",
