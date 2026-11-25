@@ -236,11 +236,13 @@ export const sources: Record<string, SourceFile> = {
     simplifications: {
       fr: [
         "La vidéo dit que De Launay est tué « en chemin » vers l'Hôtel de Ville : il est en réalité tué devant l'Hôtel de Ville, avant d'avoir été jugé.",
+        "La vidéo dit que De Launay est gouverneur « depuis 1776 » : la BnF date son entrée en fonction de septembre 1775.",
         "Les journées du 12 et du 13 juillet (renvoi de Necker, pillages, formation d'une milice bourgeoise) sont résumées en une phrase.",
         "Les deux délégations de la matinée et la négociation autour des canons sont réunies en une seule.",
       ],
       en: [
         "The video says de Launay was killed \"on the way\" to the Hôtel de Ville: he was in fact killed in front of the Hôtel de Ville, before being tried.",
+        "The video says de Launay had been governor \"since 1776\": the French National Library dates his appointment to September 1775.",
         "The days of 12 and 13 July (Necker's dismissal, looting, the forming of a citizens' militia) are summed up in one sentence.",
         "The morning's two delegations and the negotiation over the cannons are merged into one.",
       ],
