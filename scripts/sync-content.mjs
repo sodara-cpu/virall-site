@@ -76,5 +76,11 @@ for (const p of exp.productions) {
   };
 }
 
-fs.writeFileSync("content/productions.auto.json", JSON.stringify(out, null, 1) + "\n");
+// La date de génération ne change le fichier que si le contenu change (sinon un commit et un déploiement chaque nuit pour rien).
+const cible = "content/productions.auto.json";
+const sansDate = (o) => JSON.stringify({ ...o, genere_le: null });
+let avant = null;
+try { avant = JSON.parse(fs.readFileSync(cible, "utf8")); } catch {}
+if (avant && sansDate(avant) === sansDate(out)) out.genere_le = avant.genere_le;
+fs.writeFileSync(cible, JSON.stringify(out, null, 1) + "\n");
 console.log(`Synchronisation : ${out.productions.length} production(s) ajoutée(s) automatiquement, ${nouvellesImages} image(s) nouvelle(s). Lancer ensuite npm run images.`);

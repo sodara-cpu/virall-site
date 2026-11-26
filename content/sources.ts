@@ -257,7 +257,7 @@ const manualSources: Record<string, SourceFile> = {
   },
 
   "cherbourg-1864": {
-    status: "review",
+    status: "verified",
     updated: "2026-11-26",
     established: {
       fr: [
@@ -326,7 +326,7 @@ const manualSources: Record<string, SourceFile> = {
   },
 
   "vingre-1914": {
-    status: "review",
+    status: "verified",
     updated: "2026-11-26",
     established: {
       fr: [
