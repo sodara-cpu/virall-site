@@ -6,7 +6,8 @@
     "images": "node scripts/optimize-images.mjs",
     "dev": "next dev",
     "build": "next build && node scripts/postbuild.mjs",
-    "check": "tsc --noEmit && node scripts/check-content.mjs"
+    "check": "tsc --noEmit && node scripts/check-content.mjs",
+    "sync": "node scripts/sync-content.mjs"
   },
   "dependencies": {
     "next": "^16.4.6",

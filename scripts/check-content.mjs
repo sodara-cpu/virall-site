@@ -5,7 +5,8 @@ import fs from "node:fs";
 const read = (p) => fs.readFileSync(p, "utf8");
 const meta = JSON.parse(read("content/image-meta.json"));
 const imagesTs = read("content/images.ts");
-const registered = new Set([...imagesTs.matchAll(/^  ([a-z0-9_]+): \{/gm)].map((m) => m[1]));
+const auto = JSON.parse(read("content/productions.auto.json"));
+const registered = new Set([...[...imagesTs.matchAll(/^  ([a-z0-9_]+): \{/gm)].map((m) => m[1]), ...Object.keys(auto.images || {})]);
 const errors = [];
 
 const used = [
@@ -13,6 +14,7 @@ const used = [
   ...[...read("content/brands.ts").matchAll(/gallery: \[([^\]]+)\]/g)].flatMap((m) => [...m[1].matchAll(/"([^"]+)"/g)].map((x) => x[1])),
   ...[...read("content/productions.ts").matchAll(/image: "([^"]+)"/g)].map((m) => m[1]),
   ...[...read("app/[lang]/page.tsx").matchAll(/<Picture id="([a-z0-9_]+)"/g)].map((m) => m[1]),
+  ...(auto.productions || []).map((p) => p.image),
 ];
 for (const k of new Set(used)) {
   if (!registered.has(k)) errors.push(`Image « ${k} » utilisée mais absente de content/images.ts`);
@@ -26,6 +28,9 @@ for (const field of ["tagline", "mission", "themes", "formats", "collaboration",
   const total = (brands.match(/\n    slug: "/g) || []).length;
   if (n !== total) errors.push(`Marques : champ « ${field} » présent ${n} fois pour ${total} marques`);
 }
+
+// Productions générées : chaque production a un dossier généré.
+for (const p of auto.productions || []) if (!(auto.sources || {})[p.slug]) errors.push(`Production générée « ${p.slug} » sans dossier de sources`);
 
 // Sources : chaque production a un dossier ; une vidéo publiée exige un dossier vérifié.
 const prodTs = read("content/productions.ts");

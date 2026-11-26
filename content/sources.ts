@@ -4,6 +4,7 @@
 // Ne jamais publier une vidéo dont le dossier est en statut "review".
 
 import type { Locale } from "./i18n";
+import auto from "./productions.auto.json";
 
 export type RefKind = "primaire" | "institution" | "encyclopedie" | "article" | "ouvrage";
 
@@ -33,7 +34,7 @@ export type SourceFile = {
   openQuestions?: Record<Locale, string[]>;
 };
 
-export const sources: Record<string, SourceFile> = {
+const manualSources: Record<string, SourceFile> = {
   formose: {
     status: "verified",
     updated: "2026-11-18",
@@ -395,5 +396,8 @@ export const sources: Record<string, SourceFile> = {
     ],
   },
 };
+
+// Dossiers générés par scripts/sync-content.mjs : le dossier écrit à la main prime.
+export const sources: Record<string, SourceFile> = { ...(auto.sources as Record<string, SourceFile>), ...manualSources };
 
 export const sourceFile = (slug: string) => sources[slug] ?? null;

@@ -3,6 +3,7 @@
 // à partir de assets/images/<clé>.<ext> ; leurs dimensions sont lues dans content/image-meta.json.
 
 import meta from "./image-meta.json";
+import auto from "./productions.auto.json";
 import type { Locale } from "./i18n";
 
 export type ImageSource = "creation" | "production" | "externe";
@@ -26,7 +27,7 @@ const CREATION = "Créée pour VIRALL (image générée par IA)";
 const LIC_CREATION = "Propriété de VIRALL";
 const PRODUCTION = "Extrait des productions VIRALL Époques";
 
-export const images: Record<string, ImageEntry> = {
+const manualImages: Record<string, ImageEntry> = {
   hero_ville: {
     alt: { fr: "Toits d'une vieille ville au petit matin, coupoles anciennes et tours modernes au loin", en: "Rooftops of an old city at dawn, ancient domes and modern towers in the distance" },
     source: "creation", provenance: CREATION, licence: LIC_CREATION, ai: true, conceptual: true, focal: "50% 60%",
@@ -188,6 +189,9 @@ export const images: Record<string, ImageEntry> = {
     source: "creation", provenance: CREATION, licence: LIC_CREATION, ai: true, conceptual: true,
   },
 };
+
+// Images déposées par scripts/sync-content.mjs ; une image enregistrée à la main prime.
+export const images: Record<string, ImageEntry> = { ...(auto.images as Record<string, ImageEntry>), ...manualImages };
 
 export type ImageMeta = { w: number; h: number; widths: number[]; blur: string };
 const metaMap = meta as Record<string, ImageMeta>;

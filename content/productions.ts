@@ -3,6 +3,7 @@
 // Quand une vidéo est publiée : passer status à "published", renseigner publishedAt et links.
 
 import type { Locale } from "./i18n";
+import auto from "./productions.auto.json";
 
 export type Production = {
   slug: string;
@@ -21,7 +22,7 @@ export type Production = {
   youtubeId?: string; // pour le lecteur intégré, après publication
 };
 
-export const productions: Production[] = [
+const manual: Production[] = [
   {
     slug: "formose",
     brand: "epoques",
@@ -142,6 +143,13 @@ export const productions: Production[] = [
     image: "prod_vingre_champ",
     links: [],
   },
+];
+
+// Productions ajoutées par scripts/sync-content.mjs ; une production écrite à la main prime toujours.
+const manualSlugs = new Set(manual.map((p) => p.slug));
+export const productions: Production[] = [
+  ...manual,
+  ...(auto.productions as Production[]).filter((p) => !manualSlugs.has(p.slug)),
 ];
 
 export const formatDuration = (s: number | null) =>
