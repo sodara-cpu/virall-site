@@ -6,7 +6,7 @@ const base = process.env.BASE_PATH || "";
 const domain = process.env.CUSTOM_DOMAIN || ""; // ex. virall.art au moment de la mise en production
 
 const shell = (title, body, head = "") => `<!DOCTYPE html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self'; base-uri 'self'; object-src 'none'"><meta name="referrer" content="strict-origin-when-cross-origin">
 <title>${title}</title><meta name="robots" content="noindex"><link rel="icon" href="${base}/favicon.svg">${head}
 <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#141B2D;color:#F7F8FA;font:16px/1.6 system-ui,sans-serif;text-align:center;padding:2rem}
 h1{font:600 clamp(2.4rem,6vw,4.5rem)/1 Georgia,serif;margin:1.5rem 0 1rem}a{color:#F7F8FA}p{opacity:.75;margin:.4rem 0}</style></head>

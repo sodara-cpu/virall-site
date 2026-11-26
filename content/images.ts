@@ -22,8 +22,8 @@ export type ImageEntry = {
   focal?: string; // object-position CSS
 };
 
-const CREATION = "Créée pour VIRALL (génération d'image, prompts archivés dans assets/prompts_site.json)";
-const LIC_CREATION = "Propriété de VIRALL, usage commercial selon les conditions du service de génération";
+const CREATION = "Créée pour VIRALL (image générée par IA)";
+const LIC_CREATION = "Propriété de VIRALL";
 const PRODUCTION = "Extrait des productions VIRALL Époques";
 
 export const images: Record<string, ImageEntry> = {

@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 
 // Polices hébergées sur le site (SIL Open Font License 1.1), réduites aux caractères latins utilisés.
-// Fraunces est figée sur ses réglages d'affichage (opsz 144 ; 560 en romain, 400 en italique) : voir docs/DESIGN.md.
+// Fraunces est figée sur ses réglages d'affichage (opsz 144 ; 560 en romain, 400 en italique).
 export const inter = localFont({
   src: "./inter-text.woff2",
   variable: "--font-inter",

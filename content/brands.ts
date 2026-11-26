@@ -1,5 +1,5 @@
 // Registre des marques VIRALL : seule source de vérité pour le site.
-// Ajouter, renommer ou retirer une marque = modifier ce fichier (voir docs/CONTENUS.md).
+// Ajouter, renommer ou retirer une marque = modifier ce fichier.
 
 import type { Locale } from "./i18n";
 

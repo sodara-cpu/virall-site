@@ -8,6 +8,7 @@ import { RevealObserver } from "@/components/reveal";
 import { JsonLd, organizationLd } from "@/components/json-ld";
 import { isLocale, locales, t, type Locale } from "@/content/i18n";
 import { SITE_URL, asset } from "@/lib/paths";
+import { CSP } from "@/lib/security";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -40,6 +41,10 @@ export default async function LangLayout({ children, params }: { children: React
   if (!isLocale(lang)) notFound();
   return (
     <html lang={lang} className={`no-js ${inter.variable} ${fraunces.variable}`}>
+      <head>
+        <meta httpEquiv="Content-Security-Policy" content={CSP} />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+      </head>
       <body>
         <Header lang={lang} />
         <main id="contenu" tabIndex={-1} className="outline-none">

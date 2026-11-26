@@ -1,4 +1,4 @@
-// Textes juridiques. À faire relire par un professionnel avant la création de la société (voir docs/DECISIONS.md).
+// Textes juridiques. À faire relire par un professionnel avant la création de la société.
 import type { Locale } from "./i18n";
 
 export type LegalSection = { title: string; body: string[] };
