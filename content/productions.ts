@@ -20,11 +20,14 @@ export type Production = {
   image: string; // clé du registre content/images.ts
   links: { platform: "YouTube" | "TikTok" | "Instagram" | "Facebook"; url: string }[];
   youtubeId?: string; // pour le lecteur intégré, après publication
+  /** Année de l'événement central, pour la frise chronologique. */
+  year?: number;
 };
 
 const manual: Production[] = [
   {
     slug: "formose",
+    year: 897,
     brand: "epoques",
     title: {
       fr: "L'accusé ne pouvait pas répondre : il était mort",
@@ -45,6 +48,7 @@ const manual: Production[] = [
   },
   {
     slug: "bastille",
+    year: 1789,
     brand: "epoques",
     title: {
       fr: "Ils ont pris une prison presque vide. Pourquoi ?",
@@ -65,6 +69,7 @@ const manual: Production[] = [
   },
   {
     slug: "mkwawa",
+    year: 1919,
     brand: "epoques",
     title: {
       fr: "Le traité de Versailles exigeait un crâne",
@@ -85,6 +90,7 @@ const manual: Production[] = [
   },
   {
     slug: "tewodros",
+    year: 1862,
     brand: "epoques",
     title: {
       fr: "La lettre sans réponse qui mena à la guerre",
@@ -105,6 +111,7 @@ const manual: Production[] = [
   },
   {
     slug: "cherbourg-1864",
+    year: 1864,
     brand: "epoques",
     title: {
       fr: "Une bataille américaine au large de Cherbourg",
@@ -125,6 +132,7 @@ const manual: Production[] = [
   },
   {
     slug: "vingre-1914",
+    year: 1914,
     brand: "epoques",
     title: {
       fr: "Fusillés pour l'exemple, innocentés en 1921",
@@ -151,6 +159,12 @@ export const productions: Production[] = [
   ...manual,
   ...(auto.productions as Production[]).filter((p) => !manualSlugs.has(p.slug)),
 ];
+
+/** Année de la frise : champ year, sinon première année de la période. */
+export const productionYear = (p: Production) => p.year ?? Number((p.period.fr.match(/\d{3,4}/) || ["0"])[0]);
+
+/** Productions dans l'ordre chronologique de leur histoire. */
+export const chronological = () => [...productions].sort((a, b) => productionYear(a) - productionYear(b));
 
 export const formatDuration = (s: number | null) =>
   s == null ? null : `${Math.floor(s / 60)} min ${String(s % 60).padStart(2, "0")}`;

@@ -129,13 +129,42 @@ export default async function Home({ params }: { params: Promise<{ lang: Locale 
               </Link>
             </div>
           </div>
-          <div className="-mx-5 mt-16 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:mt-20 lg:grid-cols-4 lg:gap-6">
-            {productions.slice(0, 4).map((p, i) => (
+          <div className="snap-fade -mx-5 mt-16 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:mt-20 lg:grid-cols-4 lg:gap-6">
+            {[...productions].reverse().slice(0, 4).map((p, i) => (
               <div key={p.slug} className="w-[78vw] shrink-0 snap-start sm:w-auto">
                 <ProductionCard p={p} lang={lang} delay={i * 90} />
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 3 bis. Jeu « Vrai ou légende ? » */}
+      <section className="relative overflow-hidden bg-papier py-24 lg:py-32">
+        <div className="wrap grid items-center gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5" data-reveal>
+            <p className="kicker text-ardoise">{d.quiz.teaserKicker}</p>
+            <h2 className="display mt-5 text-[clamp(2.6rem,5.6vw,5.2rem)]">{d.quiz.teaserTitle}</h2>
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-ardoise">{d.quiz.teaserText}</p>
+          </div>
+          <Link
+            href={href(lang, routes.quiz)}
+            className="quiz-teaser group relative block border border-encre/15 bg-blanc p-8 transition-[transform,box-shadow] duration-700 ease-[var(--ease-cine)] hover:-translate-y-1 hover:shadow-[0_24px_60px_-30px_rgba(20,27,45,.45)] lg:col-span-6 lg:col-start-7 lg:p-12"
+            data-reveal
+          >
+            <p className="kicker text-ardoise">
+              {d.quiz.question} 1 {d.quiz.of} 10
+            </p>
+            <p className="display mt-6 text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1]">{d.quiz.teaserSample}</p>
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <span className="quiz-choice inline-flex items-center px-6">{d.quiz.true}</span>
+              <span className="quiz-choice inline-flex items-center px-6">{d.quiz.myth}</span>
+              <span className="ml-auto inline-flex items-center gap-2 text-sm font-semibold">
+                <span className="link-underline">{d.quiz.teaserCta}</span>
+                <span aria-hidden className="btn-arrow">→</span>
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 

@@ -50,6 +50,7 @@ export function Header({ lang }: { lang: Locale }) {
   const items = [
     { label: d.media, to: href(lang, routes.media) },
     { label: d.productions, to: href(lang, routes.productions) },
+    { label: d.quiz, to: href(lang, routes.quiz) },
     { label: d.about, to: href(lang, routes.about) },
     { label: d.partners, to: href(lang, routes.partners) },
     { label: d.contact, to: href(lang, routes.contact) },
@@ -71,7 +72,7 @@ export function Header({ lang }: { lang: Locale }) {
         </Link>
 
         <nav aria-label={d.menu} className="hidden lg:block">
-          <ul className="flex items-center gap-8 text-[0.9rem] font-medium">
+          <ul className="flex items-center gap-6 text-[0.9rem] font-medium xl:gap-8">
             {items.map((it) => (
               <li key={it.to}>
                 <Link href={it.to} aria-current={isActive(it.to) ? "page" : undefined} className={`link-underline py-1 ${isActive(it.to) ? "bg-[length:100%_1px]" : ""}`}>
@@ -118,8 +119,14 @@ export function Header({ lang }: { lang: Locale }) {
           <ul className="space-y-1">
             {[{ label: d.home, to: href(lang) }, ...items].map((it, i) => (
               <li key={it.to} style={{ animation: open ? `line-in .8s var(--ease-cine) ${i * 60}ms both` : undefined }}>
-                <Link href={it.to} className="display block py-2 text-[2.6rem]" aria-current={path === it.to ? "page" : undefined}>
+                <Link
+                  href={it.to}
+                  onClick={() => setOpen(false)}
+                  className={`display flex items-baseline justify-between gap-4 py-2 text-[clamp(2.1rem,9vw,2.6rem)] transition-colors ${path === it.to ? "text-accent-clair" : "hover:text-blanc/80"}`}
+                  aria-current={path === it.to ? "page" : undefined}
+                >
                   {it.label}
+                  <span aria-hidden className="kicker text-blanc/35">{String(i + 1).padStart(2, "0")}</span>
                 </Link>
               </li>
             ))}

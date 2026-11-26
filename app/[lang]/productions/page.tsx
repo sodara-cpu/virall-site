@@ -6,6 +6,7 @@ import { sourceFile } from "@/content/sources";
 import { PageHeader } from "@/components/page-header";
 import { Picture } from "@/components/picture";
 import { VideoFacade } from "@/components/video-facade";
+import { Timeline } from "@/components/timeline";
 import { pageMeta } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }) {
@@ -20,6 +21,17 @@ export default async function Productions({ params }: { params: Promise<{ lang: 
   return (
     <>
       <PageHeader kicker="VIRALL" title={d.productions.title} lead={d.productions.intro} />
+      <section aria-labelledby="frise-t" className="bg-papier pb-16 lg:pb-24">
+        <div className="wrap">
+          <div className="flex flex-wrap items-end justify-between gap-4 border-t border-encre/12 pt-10">
+            <h2 id="frise-t" className="kicker text-ardoise">{d.timeline.title}</h2>
+            <p className="text-sm text-ardoise">{d.timeline.hint}</p>
+          </div>
+          <div className="mt-10">
+            <Timeline lang={lang} dark={false} />
+          </div>
+        </div>
+      </section>
       <div className="dark-zone bg-encre text-blanc">
         {productions.map((p, i) => {
           const brand = getBrand(p.brand);

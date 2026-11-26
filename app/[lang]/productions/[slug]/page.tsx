@@ -2,12 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBrand } from "@/content/brands";
 import { href, locales, routes, t, type Locale } from "@/content/i18n";
-import { formatDuration, productions } from "@/content/productions";
+import { chronological, formatDuration, productionYear, productions } from "@/content/productions";
 import { sourceFile, type Reference } from "@/content/sources";
 import { JsonLd } from "@/components/json-ld";
 import { Picture } from "@/components/picture";
 import { ProductionCard } from "@/components/production-card";
 import { VideoFacade } from "@/components/video-facade";
+import { ReadingProgress } from "@/components/reading-progress";
 import { domainOf, formatDate } from "@/lib/format";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/paths";
 import { pageMeta } from "@/lib/seo";
@@ -157,8 +158,11 @@ export default async function ProductionSources({ params }: Params) {
   const accent = brand
     ? `color-mix(in srgb, ${brand.color} 80%, #141B2D)`
     : "#3557d4";
+  // Histoire suivante dans l'ordre chronologique (on revient à la première après la dernière).
+  const chrono = chronological().filter((x) => sourceFile(x.slug));
+  const nextP = chrono.length > 1 ? chrono[(chrono.findIndex((x) => x.slug === slug) + 1) % chrono.length] : null;
   const others = productions
-    .filter((x) => x.slug !== slug && sourceFile(x.slug))
+    .filter((x) => x.slug !== slug && x.slug !== nextP?.slug && sourceFile(x.slug))
     .slice(0, 3);
   const poster = (
     <Picture
@@ -238,6 +242,7 @@ export default async function ProductionSources({ params }: Params) {
   return (
     <>
       <JsonLd data={ld} />
+      <ReadingProgress label={ds.progress} color={accent} />
       <header className="bg-papier pb-16 pt-32 lg:pb-24 lg:pt-44">
         <div className="wrap grid gap-12 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
@@ -457,6 +462,31 @@ export default async function ProductionSources({ params }: Params) {
           </div>
         </div>
       </div>
+
+      {nextP ? (
+        <section aria-label={ds.next} className="bg-papier">
+          <Link href={href(lang, `${routes.productions}/${nextP.slug}`)} className="next-story group block">
+            <div className="wrap grid items-center gap-8 py-16 sm:grid-cols-[minmax(0,1fr)_auto] lg:py-24">
+              <div>
+                <p className="kicker text-ardoise">
+                  {ds.next} · {productionYear(nextP)}
+                </p>
+                <p className="display mt-5 text-[clamp(2.2rem,5vw,4.6rem)]">
+                  {nextP.title[lang].split(" ").slice(0, -1).join(" ")}{" "}
+                  <span className="whitespace-nowrap">
+                    {nextP.title[lang].split(" ").at(-1)}{"\u00a0"}
+                    <span aria-hidden className="btn-arrow inline-block">→</span>
+                  </span>
+                </p>
+                <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ardoise">{nextP.summary[lang]}</p>
+              </div>
+              <div className="grain relative hidden aspect-[3/4] w-48 overflow-hidden rounded-[2px] bg-encre-2 sm:block lg:w-60">
+                <Picture id={nextP.image} lang={lang} fill sizes="15rem" shortCaption imgClassName="next-story-img" />
+              </div>
+            </div>
+          </Link>
+        </section>
+      ) : null}
 
       {others.length ? (
         <section className="dark-zone bg-encre py-20 text-blanc lg:py-28">

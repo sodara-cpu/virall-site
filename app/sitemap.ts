@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/paths";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["", routes.media, ...brands.map((b) => `${routes.media}/${b.slug}`), routes.productions, ...productions.filter((p) => sourceFile(p.slug)).map((p) => `${routes.productions}/${p.slug}`), routes.about, routes.partners, routes.contact, routes.legal, routes.privacy, routes.cookies];
+  const paths = ["", routes.media, ...brands.map((b) => `${routes.media}/${b.slug}`), routes.productions, ...productions.filter((p) => sourceFile(p.slug)).map((p) => `${routes.productions}/${p.slug}`), routes.quiz, routes.about, routes.partners, routes.contact, routes.legal, routes.privacy, routes.cookies];
   return paths.flatMap((p) =>
     locales.map((l) => ({
       url: `${SITE_URL}/${l}/${p ? `${p}/` : ""}`,

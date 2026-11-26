@@ -10,6 +10,7 @@ export function Footer({ lang }: { lang: Locale }) {
   const nav = [
     { label: d.nav.media, to: href(lang, routes.media) },
     { label: d.nav.productions, to: href(lang, routes.productions) },
+    { label: d.nav.quiz, to: href(lang, routes.quiz) },
     { label: d.nav.about, to: href(lang, routes.about) },
     { label: d.nav.partners, to: href(lang, routes.partners) },
     { label: d.nav.contact, to: href(lang, routes.contact) },
