@@ -254,6 +254,146 @@ export const sources: Record<string, SourceFile> = {
       { kind: "encyclopedie", title: "Storming of the Bastille", container: "Encyclopaedia Britannica", url: "https://www.britannica.com/event/storming-of-the-Bastille", accessed: "2026-11-25" },
     ],
   },
+
+  "cherbourg-1864": {
+    status: "review",
+    updated: "2026-11-26",
+    established: {
+      fr: [
+        "Le 19 juin 1864, au large de Cherbourg, la corvette de l'Union USS Kearsarge et le croiseur confédéré CSS Alabama s'affrontent.",
+        "L'Alabama a été construit en Angleterre, au chantier Laird de Birkenhead, en 1862. Pendant près de deux ans, il chasse les navires marchands du Nord sur tous les océans et brûle souvent ses prises en mer.",
+        "Le 11 juin 1864, l'Alabama, usé, entre à Cherbourg pour être réparé. Le Kearsarge arrive devant le port le 14 juin.",
+        "Le capitaine Semmes fait savoir qu'il sortira se battre. Le dimanche 19 juin au matin, l'Alabama quitte la rade, accompagné par le cuirassé français Couronne jusqu'à la limite des eaux françaises.",
+        "Les deux navires tournent l'un autour de l'autre en sept cercles. D'après le rapport du capitaine Winslow, l'Alabama tire environ 370 coups, le Kearsarge 173.",
+        "Le Kearsarge a suspendu ses chaînes d'ancre le long de ses flancs. Un obus de l'Alabama reste planté dans son étambot sans exploser.",
+        "Le Kearsarge et des bateaux pilotes français repêchent des survivants ; le yacht anglais Deerhound recueille une quarantaine d'hommes, dont Semmes, et part vers l'Angleterre.",
+        "Washington réclame réparation à Londres. En 1872, un tribunal d'arbitrage réuni à Genève condamne la Grande-Bretagne à payer 15,5 millions de dollars.",
+      ],
+      en: [
+        "On 19 June 1864, off Cherbourg, the Union sloop USS Kearsarge and the Confederate cruiser CSS Alabama fought each other.",
+        "The Alabama had been built in England, at the Laird yard in Birkenhead, in 1862. For almost two years it hunted Northern merchant ships across the oceans, often burning its prizes at sea.",
+        "On 11 June 1864, the worn-out Alabama entered Cherbourg for repairs. The Kearsarge arrived off the port on 14 June.",
+        "Captain Semmes let it be known that he would come out and fight. On the morning of Sunday 19 June, the Alabama left the roadstead, escorted by the French ironclad Couronne to the limit of French waters.",
+        "The two ships circled each other seven times. According to Captain Winslow's report, the Alabama fired about 370 rounds, the Kearsarge 173.",
+        "The Kearsarge had hung its anchor chains along its sides. A shell from the Alabama lodged in its sternpost without exploding.",
+        "The Kearsarge and French pilot boats picked up survivors; the English yacht Deerhound rescued about forty men, Semmes among them, and sailed for England.",
+        "Washington demanded compensation from London. In 1872, an arbitration tribunal sitting in Geneva ordered Britain to pay 15.5 million dollars.",
+      ],
+    },
+    debated: {
+      fr: [
+        "La durée du combat : environ une heure avant que l'Alabama ne prenne l'eau, puis une vingtaine de minutes avant qu'il ne sombre selon Winslow ; environ une heure dix selon Semmes. La vidéo dit « environ ».",
+        "Le nombre de navires capturés par l'Alabama : de 58 à 65 selon les sources. La vidéo dit « des dizaines ».",
+      ],
+      en: [
+        "How long the fight lasted: about an hour before the Alabama began taking water, then some twenty minutes before it sank according to Winslow; about an hour and ten minutes according to Semmes. The video says \"about\".",
+        "How many ships the Alabama captured: 58 to 65 depending on the source. The video says \"dozens\".",
+      ],
+    },
+    simplifications: {
+      fr: [
+        "Les 15,5 millions de dollars couvrent les « réclamations de l'Alabama », c'est-à-dire plusieurs croiseurs confédérés, pas l'Alabama seul.",
+        "Les réparations refusées à l'Alabama à Cherbourg avant le combat ne sont pas racontées.",
+        "Les noyades sont évoquées, jamais montrées ; aucun visage de personne réelle n'apparaît.",
+      ],
+      en: [
+        "The 15.5 million dollars covered the \"Alabama claims\", that is several Confederate cruisers, not the Alabama alone.",
+        "The repairs the Alabama was refused at Cherbourg before the fight are left out.",
+        "The drownings are mentioned, never shown; no real person's face appears.",
+      ],
+    },
+    reading: {
+      fr: "« La bataille de Cherbourg s'est terminée devant des juges » est notre lecture : le combat dure environ une heure, mais son dénouement est l'arbitrage de Genève, huit ans plus tard.",
+      en: "\"The Battle of Cherbourg ended in front of judges\" is our reading: the fight lasted about an hour, but its outcome was the Geneva arbitration, eight years later.",
+    },
+    openQuestions: {
+      fr: ["La foule de spectateurs massée sur la côte, souvent racontée, n'apparaît pas dans les rapports des deux capitaines. La vidéo ne la montre pas."],
+      en: ["The crowd of onlookers on the shore, often described, does not appear in either captain's report. The video does not show it."],
+    },
+    references: [
+      { kind: "primaire", title: "Rapports du capitaine Winslow (19 juin et 30 juillet 1864) et du capitaine Semmes (Southampton, 21 juin 1864)", container: "Naval History and Heritage Command" },
+      { kind: "primaire", title: "Étambot du Kearsarge avec l'obus de l'Alabama (photographie NH 58781)", container: "Naval History and Heritage Command, photothèque" },
+      { kind: "institution", title: "Histoire du CSS Alabama", container: "Naval History and Heritage Command" },
+      { kind: "institution", author: "Office of the Historian (département d'État américain)", title: "The Alabama Claims, 1862-1872" },
+      { kind: "institution", title: "The Alabama arbitration, Geneva 1872", container: "Library of Congress" },
+      { kind: "encyclopedie", title: "Alabama claims", container: "Encyclopaedia Britannica" },
+      { kind: "encyclopedie", title: "USS Kearsarge (1861)", container: "Wikipédia, d'après le Dictionary of American Naval Fighting Ships" },
+      { kind: "article", title: "Almanach du 19 juin 1864", container: "Hérodote" },
+      { kind: "article", author: "W. Topp", title: "Military History Now", year: "2021" },
+      { kind: "article", title: "A shell from Alabama lodged in USS Kearsarge", container: "Civil War Picket", year: "2024" },
+    ],
+  },
+
+  "vingre-1914": {
+    status: "review",
+    updated: "2026-11-26",
+    established: {
+      fr: [
+        "Le 27 novembre 1914, en fin de journée, après un bombardement, les Allemands entrent dans une tranchée française près de Vingré, dans l'Aisne. Vingt-quatre hommes de la 19e compagnie du 298e régiment d'infanterie se replient vers une tranchée en arrière, puis regagnent leur poste peu après.",
+        "Le 3 décembre 1914, les vingt-quatre passent devant le conseil de guerre spécial de la 53e division d'infanterie pour abandon de poste en présence de l'ennemi. Six sont condamnés à mort.",
+        "Le caporal Henri Floch, 33 ans, écrit à sa femme Lucie : « Je ne suis pas plus coupable que les autres, mais il faut un exemple. » Le soir du 3 décembre, Jean Blanchard écrit à sa femme Michelle : « Nous sommes six pour payer pour tous. »",
+        "Le 4 décembre 1914 à 7 h 30, les six sont fusillés à 200 mètres à l'ouest du calvaire de Vingré, puis les troupes présentes défilent devant les corps.",
+        "Les six fusillés : le caporal Henri Floch, Jean Blanchard, Francisque Durantet, Pierre Gay, Claude Pettelet et Jean Quinault.",
+        "Le 29 janvier 1921, la Cour de cassation annule le jugement et « décharge leur mémoire » de la condamnation.",
+        "Le 5 avril 1925, un monument portant leurs six noms est inauguré à l'endroit de l'exécution.",
+        "Le Service historique de la défense recense 639 soldats français fusillés pour l'exemple pendant la Grande Guerre ; une quarantaine de cas seulement ont été réhabilités (Sénat, 2 février 2023).",
+      ],
+      en: [
+        "On 27 November 1914, late in the day, after a bombardment, German troops entered a French trench near Vingré, in the Aisne. Twenty-four men of the 19th company of the 298th Infantry Regiment fell back to a trench in the rear, then returned to their post shortly afterwards.",
+        "On 3 December 1914, the twenty-four came before the special court martial of the 53rd Infantry Division for abandoning their post in the presence of the enemy. Six were sentenced to death.",
+        "Corporal Henri Floch, 33, wrote to his wife Lucie: \"I am no guiltier than the others, but they need an example.\" On the evening of 3 December, Jean Blanchard wrote to his wife Michelle: \"There are six of us paying for everyone.\"",
+        "On 4 December 1914 at 7.30 am, the six were shot 200 metres west of the Vingré wayside cross; the troops present then marched past the bodies.",
+        "The six men shot: Corporal Henri Floch, Jean Blanchard, Francisque Durantet, Pierre Gay, Claude Pettelet and Jean Quinault.",
+        "On 29 January 1921, France's Court of Cassation quashed the verdict and \"cleared their memory\" of the conviction.",
+        "On 5 April 1925, a memorial bearing their six names was unveiled where they were executed.",
+        "France's Defence Historical Service counts 639 French soldiers shot as an example during the First World War; only about forty cases have been rehabilitated (French Senate, 2 February 2023).",
+      ],
+    },
+    debated: {
+      fr: [
+        "L'ordre de repli : les soldats disent avoir obéi à leur sous-lieutenant, qui nie l'avoir donné. La vidéo présente les deux versions sans citer le nom de l'officier.",
+        "La désignation des six condamnés : tirage au sort selon plusieurs récits, désignation arbitraire selon d'autres, dont la Ligue des droits de l'homme.",
+        "La date du conseil de guerre : 3 décembre selon le texte de l'arrêt de 1921, 4 décembre selon le CNRS. La vidéo retient le 3.",
+      ],
+      en: [
+        "The order to fall back: the soldiers said they obeyed their second lieutenant, who denied giving it. The video gives both versions without naming the officer.",
+        "How the six were chosen: by drawing lots according to several accounts, arbitrarily according to others, including the French Human Rights League.",
+        "The date of the court martial: 3 December according to the 1921 ruling, 4 December according to the CNRS. The video uses 3 December.",
+      ],
+    },
+    simplifications: {
+      fr: [
+        "Le sort des dix-huit autres soldats n'est pas raconté : une seule source le précise.",
+        "La date exacte de la dernière lettre de Floch n'est pas connue. Il signait « Henry » ; la vidéo dit Henri. L'orthographe Quinault (arrêt et monument) est retenue ; on trouve aussi Quinaud.",
+        "L'exécution est évoquée, jamais montrée ; aucun visage des soldats fusillés n'apparaît.",
+      ],
+      en: [
+        "What happened to the other eighteen soldiers is left out: only one source gives it.",
+        "The exact date of Floch's last letter is unknown. He signed \"Henry\"; the video says Henri. The spelling Quinault (ruling and memorial) is used; Quinaud is also found.",
+        "The execution is mentioned, never shown; none of the executed soldiers' faces appears.",
+      ],
+    },
+    reading: {
+      fr: "« Un jugement, ça s'annule. Une vie, non. » est notre lecture : l'arrêt de 1921 annule la condamnation plus de six ans après l'exécution.",
+      en: "\"A verdict can be quashed. A life cannot.\" is our reading: the 1921 ruling quashed the conviction more than six years after the execution.",
+    },
+    openQuestions: {
+      fr: ["La réhabilitation collective des fusillés pour l'exemple : adoptée par l'Assemblée nationale en 2022, rejetée par le Sénat en 2023, la proposition de loi a été renvoyée en commission le 23 juillet 2024. Aucune loi n'a été trouvée en 2025 et 2026 (recherche du 26 novembre 2026)."],
+      en: ["Collective rehabilitation of the soldiers shot as an example: passed by the National Assembly in 2022, rejected by the Senate in 2023, the bill was sent back to committee on 23 July 2024. No law was found in 2025 or 2026 (search of 26 November 2026)."],
+    },
+    references: [
+      { kind: "primaire", title: "Arrêt de la Cour de cassation du 29 janvier 1921", container: "Journal officiel du 18 février 1921", year: "1921" },
+      { kind: "primaire", title: "Journal des marches et opérations du 298e régiment d'infanterie, 4 décembre 1914" },
+      { kind: "primaire", title: "Lettres du caporal Henri Floch à sa femme Lucie", container: "Horizon 14-18" },
+      { kind: "primaire", title: "Lettre de Jean Blanchard à sa femme Michelle, 3 décembre 1914", container: "14-18Hebdo" },
+      { kind: "primaire", title: "Compte rendu de la séance du 2 février 2023", container: "Sénat" },
+      { kind: "primaire", title: "Proposition de loi n° 153 (17e législature)", container: "Assemblée nationale" },
+      { kind: "institution", author: "Ligue des droits de l'homme", title: "La réhabilitation des fusillés pour l'exemple" },
+      { kind: "institution", author: "CNRS, Centre d'histoire sociale", title: "La mémoire des fusillés de Vingré" },
+      { kind: "institution", title: "Monument aux fusillés de Vingré", container: "Picardie 14-18 ; mairie de Saint-Victor" },
+      { kind: "encyclopedie", title: "Martyrs de Vingré", container: "Wikipédia" },
+    ],
+  },
 };
 
 export const sourceFile = (slug: string) => sources[slug] ?? null;

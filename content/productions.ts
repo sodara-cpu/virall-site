@@ -102,6 +102,46 @@ export const productions: Production[] = [
     image: "prod_tewodros_shamma",
     links: [],
   },
+  {
+    slug: "cherbourg-1864",
+    brand: "epoques",
+    title: {
+      fr: "Une bataille américaine au large de Cherbourg",
+      en: "An American battle off Cherbourg",
+    },
+    summary: {
+      fr: "Juin 1864 : la guerre de Sécession se joue devant Cherbourg. Le corsaire sudiste Alabama, construit en Angleterre, affronte le Kearsarge de l'Union. La facture arrivera à Londres.",
+      en: "June 1864: the American Civil War is fought off Cherbourg. The Confederate raider Alabama, built in England, faces the Union's Kearsarge. The bill will land in London.",
+    },
+    period: { fr: "1862 – 1872", en: "1862 – 1872" },
+    category: { fr: "Batailles", en: "Battles" },
+    format: "vertical",
+    durationSec: 110,
+    status: "soon",
+    publishedAt: null,
+    image: "prod_cherbourg_combat",
+    links: [],
+  },
+  {
+    slug: "vingre-1914",
+    brand: "epoques",
+    title: {
+      fr: "Fusillés pour l'exemple, innocentés en 1921",
+      en: "Shot as an example, cleared in 1921",
+    },
+    summary: {
+      fr: "Décembre 1914, à Vingré, dans l'Aisne : six soldats français sont fusillés par leur propre armée. Six ans plus tard, la Cour de cassation annule le jugement.",
+      en: "December 1914, at Vingré in the Aisne: six French soldiers are shot by their own army. Six years later, France's highest court quashes the verdict.",
+    },
+    period: { fr: "1914 – 1921", en: "1914 – 1921" },
+    category: { fr: "Grande Guerre", en: "First World War" },
+    format: "vertical",
+    durationSec: 111,
+    status: "soon",
+    publishedAt: null,
+    image: "prod_vingre_champ",
+    links: [],
+  },
 ];
 
 export const formatDuration = (s: number | null) =>

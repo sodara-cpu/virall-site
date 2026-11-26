@@ -1,10 +1,11 @@
 // Optimise les images sources (assets/images) en AVIF et WebP à plusieurs largeurs, dans public/img.
 // Écrit aussi content/image-meta.json (dimensions, largeurs produites, aperçu flou).
-// Usage : npm run images  (ne retraite que les images nouvelles ou modifiées)
+// Usage : npm run images  (ne retraite que les images nouvelles ou modifiées, repérées par leur empreinte)
 
 import fs from "node:fs";
 import path from "node:path";
 import sharp from "sharp";
+import crypto from "node:crypto";
 
 const SRC = "assets/images";
 const OUT = "public/img";
@@ -18,8 +19,14 @@ const files = fs.readdirSync(SRC).filter((f) => /\.(webp|png|jpe?g)$/i.test(f));
 for (const file of files) {
   const key = file.replace(/\.[^.]+$/, "");
   const src = path.join(SRC, file);
-  const mtime = fs.statSync(src).mtimeMs;
-  if (meta[key]?.mtime === mtime && fs.existsSync(path.join(OUT, `${key}-${meta[key].widths.at(-1)}.avif`))) continue;
+  // Empreinte du contenu (et non la date du fichier) : un nouveau clone ne retraite rien.
+  const hash = crypto.createHash("sha1").update(fs.readFileSync(src)).digest("hex");
+  const done = meta[key] && fs.existsSync(path.join(OUT, `${key}-${meta[key].widths.at(-1)}.avif`));
+  if (done && (meta[key].hash === hash || (!meta[key].hash && process.env.IMAGES_FORCE !== "1"))) {
+    meta[key].hash = hash;
+    delete meta[key].mtime;
+    continue;
+  }
 
   const img = sharp(src).rotate();
   const { width, height } = await img.metadata();
@@ -37,7 +44,7 @@ for (const file of files) {
     h: height,
     widths: [...new Set(widths)].sort((a, b) => a - b),
     blur: `data:image/webp;base64,${tiny.toString("base64")}`,
-    mtime,
+    hash,
   };
   console.log("ok", key, width, "x", height);
 }

@@ -103,6 +103,22 @@ export const images: Record<string, ImageEntry> = {
     alt: { fr: "Des soldats tirent depuis le parapet de la Bastille", en: "Soldiers firing from the parapet of the Bastille" },
     source: "production", provenance: `${PRODUCTION} (Bastille)`, licence: "Propriété de VIRALL", ai: true, reconstitution: true,
   },
+  prod_cherbourg_combat: {
+    alt: { fr: "Deux navires de guerre à vapeur échangent des tirs sur une mer grise, au large de Cherbourg, 1864", en: "Two steam warships exchanging fire on a grey sea off Cherbourg, 1864" },
+    source: "production", provenance: `${PRODUCTION} (Cherbourg)`, licence: "Propriété de VIRALL", ai: true, reconstitution: true,
+  },
+  prod_cherbourg_chaines: {
+    alt: { fr: "Des chaînes d'ancre suspendues le long de la coque noire d'un navire de guerre", en: "Anchor chains hanging along the black hull of a warship" },
+    source: "production", provenance: `${PRODUCTION} (Cherbourg)`, licence: "Propriété de VIRALL", ai: true, reconstitution: true,
+  },
+  prod_vingre_champ: {
+    alt: { fr: "Six poteaux de bois au bord d'un champ labouré couvert de givre, à l'aube, 1914", en: "Six wooden posts at the edge of a frosty ploughed field at dawn, 1914" },
+    source: "production", provenance: `${PRODUCTION} (Vingré)`, licence: "Propriété de VIRALL", ai: true, reconstitution: true,
+  },
+  prod_vingre_jugement: {
+    alt: { fr: "Une feuille manuscrite et un képi d'officier sur une table de bois, 1914", en: "A handwritten sheet and an officer's kepi on a wooden table, 1914" },
+    source: "production", provenance: `${PRODUCTION} (Vingré)`, licence: "Propriété de VIRALL", ai: true, reconstitution: true,
+  },
   prod_mkwawa_guerriers: {
     alt: { fr: "Des guerriers hehe armés de lances dans la savane, fin du XIXe siècle", en: "Hehe warriors with spears in the savannah, late nineteenth century" },
     source: "production", provenance: `${PRODUCTION} (Mkwawa)`, licence: "Propriété de VIRALL", ai: true, reconstitution: true,
