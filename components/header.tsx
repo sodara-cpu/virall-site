@@ -63,7 +63,7 @@ export function Header({ lang }: { lang: Locale }) {
         open ? "bg-encre text-blanc" : solid ? "bg-blanc/92 text-encre shadow-[0_1px_0_rgba(20,27,45,.08)] backdrop-blur-md" : "bg-transparent text-blanc"
       } ${dark ? "dark-zone" : ""}`}
     >
-      <a href="#contenu" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-blanc">
+      <a href="#contenu" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:bg-accent focus:px-4 focus:py-2 focus:text-blanc">
         {d.skip}
       </a>
       <div className="wrap flex h-[4.25rem] items-center justify-between gap-6 lg:h-20">
@@ -88,12 +88,12 @@ export function Header({ lang }: { lang: Locale }) {
             href={switchHref}
             hrefLang={other}
             lang={other}
-            className="hidden rounded-full border border-current/25 px-3 py-1.5 text-xs font-semibold tracking-[0.12em] transition-colors hover:border-current/60 sm:inline-flex"
+            className="hidden min-h-11 items-center px-1 text-[0.8125rem] font-semibold transition-colors sm:inline-flex"
             aria-label={d.switchLang}
           >
-            <span className={lang === "fr" ? "opacity-100" : "opacity-45"}>FR</span>
-            <span className="mx-1.5 opacity-30">/</span>
-            <span className={lang === "en" ? "opacity-100" : "opacity-45"}>EN</span>
+            <span className={lang === "fr" ? "underline decoration-1 underline-offset-[0.3em]" : "opacity-75 hover:opacity-100"}>FR</span>
+            <span aria-hidden className="mx-2 opacity-40">/</span>
+            <span className={lang === "en" ? "underline decoration-1 underline-offset-[0.3em]" : "opacity-75 hover:opacity-100"}>EN</span>
           </Link>
           <button
             ref={menuBtn}
@@ -126,12 +126,11 @@ export function Header({ lang }: { lang: Locale }) {
                   aria-current={path === it.to ? "page" : undefined}
                 >
                   {it.label}
-                  <span aria-hidden className="kicker text-blanc/35">{String(i + 1).padStart(2, "0")}</span>
                 </Link>
               </li>
             ))}
           </ul>
-          <Link href={switchHref} hrefLang={other} lang={other} className="kicker mt-10 inline-flex text-blanc/70">
+          <Link href={switchHref} hrefLang={other} lang={other} className="kicker mt-10 inline-flex min-h-11 items-center text-blanc/80">
             {d.switchLang}
           </Link>
         </nav>

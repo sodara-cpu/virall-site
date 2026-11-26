@@ -16,7 +16,7 @@ export function Timeline({ lang, dark = true }: { lang: Locale; dark?: boolean }
             <li key={p.slug} className="timeline-item" data-reveal style={{ ["--reveal-delay" as string]: `${k * 70}ms` }}>
               <Link href={href(lang, `${routes.productions}/${p.slug}`)} className="group flex h-full flex-col">
                 <span className="timeline-card">
-                  <span className="grain relative block aspect-[4/5] w-full overflow-hidden rounded-[2px] bg-encre-2">
+                  <span className="grain relative block aspect-[4/5] w-full overflow-hidden bg-encre-2">
                     <Picture
                       id={p.image}
                       lang={lang}
@@ -35,7 +35,7 @@ export function Timeline({ lang, dark = true }: { lang: Locale; dark?: boolean }
           ))}
         </ol>
       </div>
-      <p className="mt-3 text-xs opacity-60">{t(lang).common.aiReconstitution}</p>
+      <p className="caption mt-3 opacity-75">{t(lang).common.aiReconstitution}</p>
     </div>
   );
 }

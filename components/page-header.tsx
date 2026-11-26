@@ -1,21 +1,19 @@
-/** En-tête des pages intérieures (fond clair). */
+/** En-tête des pages intérieures : titre de presse, chapô en Garamond, filet de séparation. */
 export function PageHeader({ kicker, title, lead, children }: { kicker?: string; title: string; lead?: string; children?: React.ReactNode }) {
   return (
-    <header className="bg-papier pb-16 pt-36 lg:pb-24 lg:pt-48">
-      <div className="wrap grid gap-8 lg:grid-cols-12">
-        <div className="lg:col-span-8">
-          {kicker ? <p className="kicker text-ardoise" style={{ animation: "line-in 1s var(--ease-cine) both" }}>{kicker}</p> : null}
-          <h1 className="display mt-5 text-[clamp(3rem,8vw,7.5rem)]">
-            <span className="line-mask">
-              <span>{title}</span>
-            </span>
-          </h1>
+    <header className="bg-blanc pt-32 lg:pt-44">
+      <div className="wrap">
+        <div className="grid gap-8 border-b border-encre/15 pb-12 lg:grid-cols-12 lg:pb-16">
+          <div className="lg:col-span-7">
+            {kicker ? <p className="rubric text-ardoise">{kicker}</p> : null}
+            <h1 className={`display text-[clamp(2.6rem,5.6vw,5.2rem)] ${kicker ? "mt-3" : ""}`}>
+              <span className="line-mask">
+                <span>{title}</span>
+              </span>
+            </h1>
+          </div>
+          {lead ? <p className="dek self-end text-encre/80 lg:col-span-4 lg:col-start-9">{lead}</p> : null}
         </div>
-        {lead ? (
-          <p className="self-end text-lg leading-relaxed text-ardoise lg:col-span-4">
-            {lead}
-          </p>
-        ) : null}
         {children}
       </div>
     </header>

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import "../globals.css";
-import { fraunces, inter } from "../fonts";
+import { fraunces, garamond, inter } from "../fonts";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { RevealObserver } from "@/components/reveal";
@@ -40,7 +40,7 @@ export default async function LangLayout({ children, params }: { children: React
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
   return (
-    <html lang={lang} className={`no-js ${inter.variable} ${fraunces.variable}`}>
+    <html lang={lang} className={`no-js ${inter.variable} ${fraunces.variable} ${garamond.variable}`}>
       <head>
         <meta httpEquiv="Content-Security-Policy" content={CSP} />
         <meta name="referrer" content="strict-origin-when-cross-origin" />

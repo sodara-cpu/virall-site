@@ -53,7 +53,7 @@ export function AmbientVideo({ src, poster, label, className = "", pauseLabel, p
   return (
     <div className={`relative ${className}`}>
       <video ref={ref} className="absolute inset-0 h-full w-full object-cover" src={asset(src)} poster={near ? asset(poster) : undefined} muted loop playsInline preload="none" aria-label={label} />
-      <button type="button" onClick={toggle} className="absolute bottom-3 left-3 z-10 rounded-full bg-encre/60 px-3 py-1.5 text-xs font-semibold text-blanc backdrop-blur-sm hover:bg-encre/80">
+      <button type="button" onClick={toggle} className="absolute bottom-0 left-0 z-10 min-h-11 bg-encre/75 px-3 py-1.5 text-xs font-semibold text-blanc hover:bg-encre">
         {paused ? `▶ ${playLabel}` : `❚❚ ${pauseLabel}`}
       </button>
     </div>

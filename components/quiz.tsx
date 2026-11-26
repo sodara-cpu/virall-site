@@ -88,7 +88,7 @@ export function Quiz({ questions, tx }: { questions: QuizQuestion[]; tx: QuizTex
         </p>
         <div className="mt-6 flex gap-1.5" aria-hidden>
           {questions.map((_, k) => (
-            <span key={k} className={`h-1.5 flex-1 rounded-full ${k < score ? "bg-accent" : "bg-encre/12"}`} />
+            <span key={k} className={`h-1 flex-1 ${k < score ? "bg-accent" : "bg-encre/12"}`} />
           ))}
         </div>
         <p className="mt-8 max-w-lg text-lg leading-relaxed text-encre/85">{line}</p>
@@ -112,7 +112,7 @@ export function Quiz({ questions, tx }: { questions: QuizQuestion[]; tx: QuizTex
       </div>
       <div className="mt-4 flex gap-1.5" aria-hidden>
         {questions.map((_, k) => (
-          <span key={k} className={`h-1 flex-1 rounded-full transition-colors duration-500 ${k < i ? "bg-encre" : k === i ? "bg-accent" : "bg-encre/12"}`} />
+          <span key={k} className={`h-[3px] flex-1 transition-colors duration-500 ${k < i ? "bg-encre" : k === i ? "bg-accent" : "bg-encre/12"}`} />
         ))}
       </div>
 

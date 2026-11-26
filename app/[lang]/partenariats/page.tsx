@@ -16,7 +16,7 @@ export default async function Partners({ params }: { params: Promise<{ lang: Loc
   const d = t(lang);
   return (
     <>
-      <PageHeader kicker="VIRALL" title={d.partners.title} lead={d.partners.lead} />
+      <PageHeader title={d.partners.title} lead={d.partners.lead} />
 
       <section className="dark-zone relative overflow-hidden bg-encre text-blanc">
         <div className="grain relative aspect-[16/7] min-h-[340px] w-full">
@@ -31,8 +31,7 @@ export default async function Partners({ params }: { params: Promise<{ lang: Loc
             {d.offers.map((o, i) => (
               <div key={o.title} className="hairline border-t py-8" data-reveal style={{ ["--reveal-delay" as string]: `${i * 70}ms` }}>
                 <dt>
-                  <span className="kicker block text-accent">{String(i + 1).padStart(2, "0")}</span>
-                  <span className="display mt-3 block text-3xl">{o.title}</span>
+                  <span className="display block text-[1.7rem]">{o.title}</span>
                 </dt>
                 <dd className="mt-3 leading-relaxed text-ardoise">{o.text}</dd>
               </div>
@@ -47,7 +46,7 @@ export default async function Partners({ params }: { params: Promise<{ lang: Loc
           <ol className="grid gap-x-8 sm:grid-cols-2 lg:col-span-8">
             {d.partners.steps.map((s, i) => (
               <li key={s.title} className="hairline border-t py-6" data-reveal style={{ ["--reveal-delay" as string]: `${i * 80}ms` }}>
-                <span className="display text-4xl text-accent">{i + 1}</span>
+                <span className="display text-[2rem] tabular-nums text-ardoise">{i + 1}</span>
                 <h3 className="mt-3 text-lg font-semibold">{s.title}</h3>
                 <p className="mt-1 text-ardoise">{s.text}</p>
               </li>
@@ -58,11 +57,10 @@ export default async function Partners({ params }: { params: Promise<{ lang: Loc
 
       <section className="bg-blanc py-20">
         <div className="wrap flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
-          <ul className="flex flex-wrap gap-3">
+          <ul className="flex flex-wrap gap-x-6 gap-y-1">
             {brands.map((b) => (
               <li key={b.slug}>
-                <Link href={href(lang, `${routes.media}/${b.slug}`)} className="inline-flex items-center gap-2 rounded-full border border-encre/15 px-4 py-2 text-sm font-medium hover:border-encre/40">
-                  <span aria-hidden className="h-2 w-2 rounded-[2px]" style={{ background: b.color }} />
+                <Link href={href(lang, `${routes.media}/${b.slug}`)} className="text-link inline-flex min-h-11 items-center text-[0.95rem] font-semibold" style={{ color: `color-mix(in srgb, ${b.color} 80%, #141B2D)` }}>
                   VIRALL {b.name}
                 </Link>
               </li>

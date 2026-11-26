@@ -9,6 +9,8 @@ import auto from "./productions.auto.json";
 export type RefKind = "primaire" | "institution" | "encyclopedie" | "article" | "ouvrage";
 
 export type Reference = {
+  /** Identifiant court et stable (ex. "winslow") : sert d'ancre (#ref-winslow) et aux renvois `cites`. Sans id : ancre #ref-<numéro>. */
+  id?: string;
   kind: RefKind;
   author?: string;
   title: string;
@@ -16,14 +18,22 @@ export type Reference = {
   year?: string;
   url?: string;
   accessed?: string; // AAAA-MM-JJ
+  /** Ce que la source permet d'établir dans ce dossier (une phrase, tirée du registre des faits) */
   note?: Record<Locale, string>;
+  /** Document mis en avant dans « Documents clés » (deux ou trois au plus, choisis pour leur utilité) */
+  highlight?: boolean;
 };
+
+/** Rubriques d'un dossier qui peuvent renvoyer vers des références */
+export type CitedSection = "established" | "debated" | "legend" | "simplifications" | "openQuestions" | "reading";
 
 export type SourceFile = {
   /** verified : relu et validé pour publication ; review : relecture en cours */
   status: "verified" | "review";
   updated: string; // AAAA-MM-JJ
   established: Record<Locale, string[]>;
+  /** Intitulés courts des faits établis, dans le même ordre que `established` (facultatif) */
+  labels?: Record<Locale, string[]>;
   debated?: Record<Locale, string[]>;
   legend?: Record<Locale, string[]>;
   simplifications?: Record<Locale, string[]>;
@@ -32,6 +42,13 @@ export type SourceFile = {
   references: Reference[];
   /** Points soumis à un historien, publiés tant qu'ils ne sont pas tranchés */
   openQuestions?: Record<Locale, string[]>;
+  /**
+   * Renvois des affirmations vers les références (facultatif), d'après le registre des faits de l'épisode.
+   * Pour chaque rubrique : un tableau aligné sur ses items (même position en FR et en EN),
+   * chaque case listant les `id` des références qui appuient l'item ([] si aucune). `reading` : une seule case.
+   * La compilation échoue si un id est inconnu ou si un tableau n'a pas la longueur de la rubrique.
+   */
+  cites?: Partial<Record<CitedSection, string[][]>>;
 };
 
 const manualSources: Record<string, SourceFile> = {
@@ -312,17 +329,143 @@ const manualSources: Record<string, SourceFile> = {
       en: ["The crowd of onlookers on the shore, often described, does not appear in either captain's report. The video does not show it."],
     },
     references: [
-      { kind: "primaire", title: "Rapports du capitaine Winslow (19 juin et 30 juillet 1864) et du capitaine Semmes (Southampton, 21 juin 1864)", container: "Naval History and Heritage Command" },
-      { kind: "primaire", title: "Étambot du Kearsarge avec l'obus de l'Alabama (photographie NH 58781)", container: "Naval History and Heritage Command, photothèque" },
-      { kind: "institution", title: "Histoire du CSS Alabama", container: "Naval History and Heritage Command" },
-      { kind: "institution", author: "Office of the Historian (département d'État américain)", title: "The Alabama Claims, 1862-1872" },
-      { kind: "institution", title: "The Alabama arbitration, Geneva 1872", container: "Library of Congress" },
-      { kind: "encyclopedie", title: "Alabama claims", container: "Encyclopaedia Britannica" },
-      { kind: "encyclopedie", title: "USS Kearsarge (1861)", container: "Wikipédia, d'après le Dictionary of American Naval Fighting Ships" },
-      { kind: "article", title: "Almanach du 19 juin 1864", container: "Hérodote" },
-      { kind: "article", author: "W. Topp", title: "Military History Now", year: "2021" },
-      { kind: "article", title: "A shell from Alabama lodged in USS Kearsarge", container: "Civil War Picket", year: "2024" },
+      {
+        id: "rapports",
+        kind: "primaire",
+        title: "Rapports du capitaine Winslow (19 juin et 30 juillet 1864) et du capitaine Semmes (Southampton, 21 juin 1864)",
+        container: "Naval History and Heritage Command",
+        year: "1864",
+        url: "https://www.history.navy.mil/research/library/online-reading-room/title-list-alphabetically/s/sinking-of-css-alabama-by-uss-kearsarge-19-jun-1864.html",
+        highlight: true,
+        note: {
+          fr: "Les rapports officiels des deux capitaines : arrivée du Kearsarge le 14 juin, défi de Semmes, escorte de la Couronne, sept cercles, nombre de coups, chaînes d'ancre, sauvetage et bilan.",
+          en: "The two captains' official reports: the Kearsarge's arrival on 14 June, Semmes's challenge, the Couronne's escort, the seven circles, rounds fired, anchor chains, rescue and casualties.",
+        },
+      },
+      {
+        id: "etambot",
+        kind: "primaire",
+        title: "Étambot du Kearsarge avec l'obus de l'Alabama (photographie NH 58781)",
+        container: "Naval History and Heritage Command, photothèque",
+        url: "https://ibiblio.org/hyperwar/OnlineLibrary/photos/images/h58000/h58781c.htm",
+        highlight: true,
+        note: {
+          fr: "La photographie de la pièce de poupe du Kearsarge où l'obus de l'Alabama est resté planté sans exploser. Lien : copie en ligne de l'ancienne photothèque du Naval Historical Center.",
+          en: "The photograph of the Kearsarge's sternpost, where the Alabama's shell lodged without exploding. Link: online copy of the former Naval Historical Center photo library.",
+        },
+      },
+      {
+        id: "nhhc-alabama",
+        kind: "institution",
+        title: "Histoire du CSS Alabama",
+        container: "Naval History and Heritage Command",
+        url: "https://www.history.navy.mil/research/histories/ship-histories/confederate_ships/alabama.html",
+        note: {
+          fr: "L'histoire du navire : construction à Birkenhead en 1862, campagne contre les navires marchands du Nord, prises brûlées, entrée à Cherbourg le 11 juin 1864.",
+          en: "The ship's history: built at Birkenhead in 1862, campaign against Northern merchant ships, prizes burned, arrival at Cherbourg on 11 June 1864.",
+        },
+      },
+      {
+        id: "state",
+        kind: "institution",
+        author: "Office of the Historian (département d'État américain)",
+        title: "The Alabama Claims, 1862-1872",
+        url: "https://history.state.gov/milestones/1861-1865/alabama",
+        note: {
+          fr: "La synthèse officielle américaine : croiseurs confédérés construits en Grande-Bretagne, nombre de prises, arbitrage de Genève et 15,5 millions de dollars.",
+          en: "The official US summary: Confederate cruisers built in Britain, number of prizes, the Geneva arbitration and the 15.5 million dollars.",
+        },
+      },
+      {
+        id: "loc",
+        kind: "institution",
+        title: "The Alabama arbitration, Geneva 1872",
+        container: "Library of Congress",
+        url: "https://blogs.loc.gov/law/2023/10/the-alabama-arbitration-geneva-1872-pic-of-the-week/",
+        note: {
+          fr: "Recoupement sur le tribunal d'arbitrage réuni à Genève en 1872.",
+          en: "Cross-check on the arbitration tribunal that sat in Geneva in 1872.",
+        },
+      },
+      {
+        id: "britannica",
+        kind: "encyclopedie",
+        title: "Alabama claims",
+        container: "Encyclopaedia Britannica",
+        url: "https://www.britannica.com/event/Alabama-claims",
+        note: {
+          fr: "Recoupement sur les « réclamations de l'Alabama » et la condamnation de la Grande-Bretagne en 1872.",
+          en: "Cross-check on the \"Alabama claims\" and Britain's 1872 award.",
+        },
+      },
+      {
+        id: "wikipedia",
+        kind: "encyclopedie",
+        title: "USS Kearsarge (1861)",
+        container: "Wikipédia, d'après le Dictionary of American Naval Fighting Ships",
+        url: "https://en.wikipedia.org/wiki/USS_Kearsarge_(1861)",
+        note: {
+          fr: "Recoupement sur les chaînes d'ancre suspendues le long des flancs du Kearsarge.",
+          en: "Cross-check on the anchor chains hung along the Kearsarge's sides.",
+        },
+      },
+      {
+        id: "herodote",
+        kind: "article",
+        title: "Almanach du 19 juin 1864",
+        container: "Hérodote",
+        url: "https://www.herodote.net/almanach-ID-3651.php",
+        note: {
+          fr: "Un récit en français de la journée, utilisé en recoupement. La foule de spectateurs qu'il mentionne n'est appuyée par aucune source.",
+          en: "A French account of the day, used as a cross-check. The crowd of onlookers it mentions is backed by no source.",
+        },
+      },
+      {
+        id: "topp",
+        kind: "article",
+        author: "W. Topp",
+        title: "The Battle of Cherbourg: When Union and Confederate Warships Clashed off the Coast of France",
+        container: "Military History Now",
+        year: "2021",
+        url: "https://militaryhistorynow.com/2021/08/03/the-battle-of-cherbourg-when-union-and-confederate-warships-clashed-off-the-coast-of-france/",
+        note: {
+          fr: "Un récit détaillé du combat, utilisé pour recouper les rapports des capitaines.",
+          en: "A detailed account of the fight, used to cross-check the captains' reports.",
+        },
+      },
+      {
+        id: "picket",
+        kind: "article",
+        title: "A shell from Alabama lodged in USS Kearsarge",
+        container: "Civil War Picket",
+        year: "2024",
+        url: "https://civil-war-picket.blogspot.com/2024/06/a-shell-from-alabama-lodged-in-uss.html",
+        note: {
+          fr: "Recoupement sur l'obus resté planté dans l'étambot du Kearsarge.",
+          en: "Cross-check on the shell that lodged in the Kearsarge's sternpost.",
+        },
+      },
     ],
+    labels: {
+      fr: ["Le combat", "Un navire construit en Angleterre", "L'arrivée à Cherbourg", "Le défi", "Sept cercles", "Les chaînes et l'obus", "Le sauvetage", "La facture de Genève"],
+      en: ["The fight", "A ship built in England", "Arrival at Cherbourg", "The challenge", "Seven circles", "The chains and the shell", "The rescue", "The Geneva bill"],
+    },
+    // D'après episodes/EPO-20261124-4/registre_faits.csv (source principale, puis recoupement).
+    cites: {
+      established: [
+        ["rapports", "herodote", "topp"],
+        ["nhhc-alabama", "state", "topp"],
+        ["nhhc-alabama", "rapports", "herodote"],
+        ["rapports", "topp", "herodote"],
+        ["rapports", "topp"],
+        ["rapports", "wikipedia", "etambot", "picket"],
+        ["rapports", "topp"],
+        ["state", "britannica", "loc"],
+      ],
+      debated: [["rapports"], ["state", "nhhc-alabama"]],
+      simplifications: [["state", "britannica"], ["nhhc-alabama"], []],
+      openQuestions: [["rapports", "herodote"]],
+    },
   },
 
   "vingre-1914": {
@@ -401,3 +544,32 @@ const manualSources: Record<string, SourceFile> = {
 export const sources: Record<string, SourceFile> = { ...(auto.sources as Record<string, SourceFile>), ...manualSources };
 
 export const sourceFile = (slug: string) => sources[slug] ?? null;
+
+/** Ancre d'une référence : #ref-<id> ou, sans id, #ref-<numéro>. */
+export const refAnchor = (r: Reference, index: number) => `ref-${r.id ?? index + 1}`;
+
+/**
+ * Renvois d'une rubrique, contrôlés à la compilation : retourne pour chaque item la liste des index (base 0)
+ * des références citées. Lève une erreur explicite si un id est inconnu ou si les longueurs ne concordent pas.
+ */
+export function resolveCites(slug: string, s: SourceFile, section: CitedSection, count: number): number[][] {
+  const raw = s.cites?.[section];
+  if (!raw) return Array.from({ length: count }, () => []);
+  if (raw.length !== count)
+    throw new Error(`Dossier « ${slug} » : cites.${section} compte ${raw.length} cases pour ${count} items`);
+  return raw.map((ids) =>
+    ids.map((id) => {
+      const i = s.references.findIndex((r) => r.id === id);
+      if (i < 0) throw new Error(`Dossier « ${slug} » : cites.${section} renvoie à la référence inconnue « ${id} »`);
+      return i;
+    }),
+  );
+}
+
+/** Contrôle des intitulés courts (même nombre que les faits établis, dans les deux langues). */
+export function checkLabels(slug: string, s: SourceFile) {
+  if (!s.labels) return;
+  for (const lang of ["fr", "en"] as const)
+    if (s.labels[lang].length !== s.established[lang].length)
+      throw new Error(`Dossier « ${slug} » : labels.${lang} compte ${s.labels[lang].length} intitulés pour ${s.established[lang].length} faits`);
+}

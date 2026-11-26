@@ -49,7 +49,7 @@ export function Universes({ items, cta }: { items: UniverseItem[]; cta: string }
     <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
       <div className="hidden lg:col-span-6 lg:block">
         <div className="sticky top-28">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2px] bg-encre">
+          <div className="relative aspect-[4/5] overflow-hidden bg-encre">
             {items.map((it, i) => (
               <div
                 key={it.slug}
@@ -60,11 +60,12 @@ export function Universes({ items, cta }: { items: UniverseItem[]; cta: string }
                 {it.image}
               </div>
             ))}
-            <div className="absolute left-5 top-5 flex items-center gap-3 rounded-full bg-blanc/92 py-1.5 pl-1.5 pr-4 text-encre backdrop-blur">
-              <Reel className="h-9 w-9" bladeColors={bladeColors} rotate={rotation} strokeWidth={12} title="" />
-              <span className="text-sm font-semibold tracking-wide">VIRALL {current.name}</span>
-            </div>
           </div>
+          {/* Légende de l'image : la bobine signale la marque présentée (la carte de la marque se colore). */}
+          <p className="mt-4 flex items-center gap-3">
+            <Reel className="h-8 w-8" bladeColors={bladeColors} rotate={rotation} strokeWidth={12} title="" />
+            <span className="rubric text-encre">VIRALL {current.name}</span>
+          </p>
         </div>
       </div>
 
@@ -82,24 +83,15 @@ export function Universes({ items, cta }: { items: UniverseItem[]; cta: string }
           >
             <Link href={it.href} className="group block">
               <div className="mb-6 overflow-hidden lg:hidden">{it.imageMobile}</div>
-              <div className="flex items-baseline justify-between gap-4">
-                <span className="kicker" style={{ color: `color-mix(in srgb, ${it.color} 80%, #141B2D)` }}>
-                  {String(i + 1).padStart(2, "0")} · {it.domain}
-                </span>
-                <span
-                  className={`rounded-full border px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] ${
-                    it.launched ? "border-transparent text-blanc" : "hairline text-ardoise"
-                  }`}
-                  style={it.launched ? { background: it.color } : undefined}
-                >
-                  {it.status}
-                </span>
-              </div>
-              <h3 className="display mt-4 text-[clamp(3rem,7vw,6.2rem)] transition-colors duration-500" style={{ color: i === active ? it.color : undefined }}>
+              <p className="kicker">
+                <span style={{ color: `color-mix(in srgb, ${it.color} 80%, #141B2D)` }}>{it.domain}</span>
+                <span className="text-ardoise"> · {it.status}</span>
+              </p>
+              <h3 className="display mt-3 text-[clamp(2.8rem,6vw,5.2rem)] transition-colors duration-500" style={{ color: i === active ? it.color : undefined }}>
                 {it.name}
               </h3>
-              <p className="mt-4 max-w-md text-lg leading-relaxed text-ardoise">{it.tagline}</p>
-              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold">
+              <p className="dek mt-3 max-w-md text-encre/80">{it.tagline}</p>
+              <span className="text-link mt-5 inline-flex items-center gap-2 text-sm font-semibold">
                 {cta} VIRALL {it.name}
                 <span aria-hidden className="btn-arrow transition-transform duration-500 group-hover:translate-x-1">→</span>
               </span>

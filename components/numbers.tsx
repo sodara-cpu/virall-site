@@ -20,24 +20,26 @@ export function Numbers({ lang }: { lang: Locale }) {
     { value: sum("views"), label: d.numbers.views },
   ].filter((i) => i.value != null && i.value > 0);
 
+  // Une ligne de faits, comme le bandeau d'informations d'un musée : pas de tableau de bord.
   return (
-    <section className="bg-brume py-24 lg:py-32">
+    <section aria-labelledby="chiffres-t" className="bg-blanc">
       <div className="wrap">
-        <div className="grid gap-8 lg:grid-cols-12" data-reveal>
-          <p className="kicker text-ardoise lg:col-span-3">{d.home.numbersKicker}</p>
-          <h2 className="display text-[clamp(2.2rem,4.4vw,3.8rem)] lg:col-span-8">{d.home.numbersTitle}</h2>
+        <div className="grid gap-6 border-y border-encre/15 py-10 lg:grid-cols-12 lg:items-baseline lg:py-12">
+          <h2 id="chiffres-t" className="rubric text-ardoise lg:col-span-3">
+            {d.home.numbersKicker}
+          </h2>
+          <dl className="flex flex-wrap gap-x-10 gap-y-5 lg:col-span-9">
+            {items.map((it) => (
+              <div key={it.label} className="flex items-baseline gap-3">
+                <dt className="order-2 max-w-[11ch] text-[0.95rem] leading-snug text-ardoise">{it.label}</dt>
+                <dd className="order-1 display text-[2.4rem] leading-none tabular-nums text-encre">{fmt.format(it.value as number)}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="text-sm text-ardoise lg:col-span-9 lg:col-start-4">
+            {d.home.numbersNote} <span>({d.common.asOf} 24/11/2026)</span>
+          </p>
         </div>
-        <dl className="mt-16 grid grid-cols-2 gap-y-12 lg:grid-cols-4">
-          {items.map((it, i) => (
-            <div key={it.label} className="hairline flex flex-col-reverse border-l pl-5 lg:pl-8" data-reveal style={{ ["--reveal-delay" as string]: `${i * 90}ms` }}>
-              <dt className="mt-3 max-w-[14ch] text-[0.95rem] text-ardoise">{it.label}</dt>
-              <dd className="display text-[clamp(4rem,8vw,7.5rem)] leading-none text-encre">{fmt.format(it.value as number)}</dd>
-            </div>
-          ))}
-        </dl>
-        <p className="mt-14 max-w-2xl text-sm text-ardoise">
-          {d.home.numbersNote} <span>({d.common.asOf} 24/11/2026)</span>
-        </p>
       </div>
     </section>
   );

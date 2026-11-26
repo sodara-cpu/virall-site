@@ -17,7 +17,7 @@ type Props = {
   shortCaption?: boolean;
 };
 
-/** Image responsive AVIF/WebP avec mention IA conforme à la charte. */
+/** Image responsive AVIF/WebP avec mention IA conforme à la charte (mention en crédit, comme une légende photo de presse). */
 export function Picture({ id, lang, sizes = "100vw", className = "", imgClassName = "", priority, caption, captionClassName = "", fill, shortCaption }: Props) {
   const info = imageInfo(id);
   if (!info) return <div className={`bg-encre-2 ${className}`} aria-hidden />;
@@ -48,7 +48,7 @@ export function Picture({ id, lang, sizes = "100vw", className = "", imgClassNam
       </picture>
       {showCaption && info.ai ? (
         <figcaption
-          className={`pointer-events-none absolute bottom-3 right-3 z-10 rounded-full bg-encre/55 px-2.5 py-1 text-[0.65rem] font-medium tracking-wide text-blanc/85 backdrop-blur-sm ${captionClassName}`}
+          className={`pointer-events-none absolute bottom-0 right-0 z-10 bg-encre/70 px-2 py-1 text-[0.68rem] leading-tight text-blanc/90 ${captionClassName}`}
         >
           {label}
         </figcaption>

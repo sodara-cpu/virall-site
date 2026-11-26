@@ -43,8 +43,8 @@ export default async function QuizPage({ params }: { params: Promise<{ lang: Loc
         <div className="wrap">
           <div className="grid gap-6 lg:grid-cols-12" data-reveal>
             <div className="lg:col-span-7">
-              <p className="kicker text-blanc/60">{d.timeline.kicker}</p>
-              <h2 className="display mt-5 text-[clamp(2.2rem,4.4vw,3.8rem)]">{d.timeline.title}</h2>
+              <p className="rubric text-blanc/75">{d.timeline.kicker}</p>
+              <h2 className="display mt-3 text-[clamp(2.2rem,4.4vw,3.8rem)]">{d.timeline.title}</h2>
             </div>
             <p className="self-end text-blanc/65 lg:col-span-4 lg:col-start-9">{d.timeline.hint}</p>
           </div>

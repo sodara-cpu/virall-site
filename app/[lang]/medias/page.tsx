@@ -17,7 +17,7 @@ export default async function MediaIndex({ params }: { params: Promise<{ lang: L
   const d = t(lang);
   return (
     <>
-      <PageHeader kicker="VIRALL" title={d.media.title} lead={d.media.intro} />
+      <PageHeader title={d.media.title} lead={d.media.intro} />
       <div className="bg-blanc">
         {brands.map((b, i) => {
           const flip = i % 2 === 1;
@@ -27,7 +27,7 @@ export default async function MediaIndex({ params }: { params: Promise<{ lang: L
               <div className="wrap grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
                 <Link
                   href={href(lang, `${routes.media}/${b.slug}`)}
-                  className={`group relative block overflow-hidden rounded-[2px] lg:col-span-7 ${flip ? "lg:order-2 lg:col-start-6" : ""}`}
+                  className={`group relative block overflow-hidden lg:col-span-7 ${flip ? "lg:order-2 lg:col-start-6" : ""}`}
                   tabIndex={-1}
                   aria-hidden
                   data-reveal
@@ -40,20 +40,20 @@ export default async function MediaIndex({ params }: { params: Promise<{ lang: L
                   <div className="flex items-center gap-4">
                     <Reel className="h-10 w-10 text-encre" bladeColors={colors} strokeWidth={12} />
                     <span className="kicker" style={{ color: `color-mix(in srgb, ${b.color} 80%, #141B2D)` }}>
-                      {String(i + 1).padStart(2, "0")} · {b.domain[lang]}
+                      {b.domain[lang]}
                     </span>
                   </div>
-                  <h2 id={`marque-${b.slug}`} className="display mt-6 text-[clamp(3rem,6vw,5.4rem)]" style={{ color: b.color }}>
+                  <h2 id={`marque-${b.slug}`} className="display mt-5 text-[clamp(2.8rem,5.4vw,4.8rem)]" style={{ color: b.color }}>
                     {b.name}
                   </h2>
-                  <p className="display-italic mt-4 text-2xl leading-snug text-encre/85">{b.tagline[lang]}</p>
-                  <p className="mt-6 leading-relaxed text-ardoise">{b.mission[lang]}</p>
+                  <p className="dek mt-3 italic text-encre/85">{b.tagline[lang]}</p>
+                  <p className="mt-5 text-[1.0625rem] leading-relaxed text-ardoise">{b.mission[lang]}</p>
                   <div className="mt-8 flex flex-wrap items-center gap-4">
                     <Link href={href(lang, `${routes.media}/${b.slug}`)} className="btn text-blanc" style={{ background: b.color }}>
                       {d.common.discover} VIRALL {b.name}
                       <span aria-hidden className="btn-arrow">→</span>
                     </Link>
-                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-ardoise">
+                    <span className="text-sm text-ardoise">
                       {b.status === "launch" ? d.common.launch : d.common.development}
                     </span>
                   </div>

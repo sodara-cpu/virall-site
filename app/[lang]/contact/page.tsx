@@ -15,11 +15,11 @@ export default async function Contact({ params }: { params: Promise<{ lang: Loca
   const d = t(lang).contact;
   return (
     <>
-      <PageHeader kicker="VIRALL" title={d.title} lead={d.lead} />
+      <PageHeader title={d.title} lead={d.lead} />
       <section className="bg-blanc py-20 lg:py-28">
         <div className="wrap grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <h2 className="kicker text-ardoise">{d.emailLabel}</h2>
+            <h2 className="rubric text-ardoise">{d.emailLabel}</h2>
             <a href={`mailto:${CONTACT_EMAIL}`} className="display link-underline mt-4 inline-block text-[clamp(1.8rem,3vw,2.6rem)]">
               {CONTACT_EMAIL}
             </a>

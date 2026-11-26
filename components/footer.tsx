@@ -2,7 +2,7 @@ import Link from "next/link";
 import { brands } from "@/content/brands";
 import { href, routes, t, type Locale } from "@/content/i18n";
 import { CONTACT_EMAIL } from "@/lib/paths";
-import { Reel, Wordmark } from "./marks";
+import { Wordmark } from "./marks";
 
 export function Footer({ lang }: { lang: Locale }) {
   const d = t(lang);
@@ -16,16 +16,12 @@ export function Footer({ lang }: { lang: Locale }) {
     { label: d.nav.contact, to: href(lang, routes.contact) },
   ];
   return (
-    <footer className="dark-zone relative overflow-hidden bg-encre text-blanc">
-      <Reel
-        className="pointer-events-none absolute -right-[12vw] -top-[8vw] w-[46vw] max-w-[640px] text-blanc/[0.045]"
-        strokeWidth={4}
-      />
+    <footer className="dark-zone relative overflow-hidden border-t border-blanc/10 bg-encre text-blanc">
       <div className="wrap relative pb-10 pt-20 lg:pt-28">
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <Wordmark className="h-10 w-auto text-blanc lg:h-14" title="VIRALL" />
-            <p className="display-italic mt-5 text-2xl text-blanc/80 lg:text-3xl">{d.footer.tagline}</p>
+            <p className="display-italic mt-5 text-2xl text-blanc/80">{d.footer.tagline}</p>
             <a href={`mailto:${CONTACT_EMAIL}`} className="link-underline mt-8 inline-block text-lg text-blanc">
               {CONTACT_EMAIL}
             </a>
@@ -33,7 +29,7 @@ export function Footer({ lang }: { lang: Locale }) {
 
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-7">
             <div>
-              <h2 className="kicker text-blanc/50">{d.footer.navigation}</h2>
+              <h2 className="kicker text-blanc/60">{d.footer.navigation}</h2>
               <ul className="mt-5 space-y-3 text-[0.95rem]">
                 {nav.map((n) => (
                   <li key={n.to}>
@@ -45,11 +41,10 @@ export function Footer({ lang }: { lang: Locale }) {
               </ul>
             </div>
             <div>
-              <h2 className="kicker text-blanc/50">{d.footer.brands}</h2>
+              <h2 className="kicker text-blanc/60">{d.footer.brands}</h2>
               <ul className="mt-5 space-y-3 text-[0.95rem]">
                 {brands.map((b) => (
-                  <li key={b.slug} className="flex items-center gap-2.5">
-                    <span aria-hidden className="h-2 w-2 rounded-[2px]" style={{ background: b.colorLight }} />
+                  <li key={b.slug}>
                     <Link href={href(lang, `${routes.media}/${b.slug}`)} className="link-underline text-blanc/85 hover:text-blanc">
                       VIRALL {b.name}
                     </Link>
@@ -59,7 +54,7 @@ export function Footer({ lang }: { lang: Locale }) {
             </div>
             {epoques && epoques.socials.length > 0 ? (
               <div className="col-span-2 sm:col-span-1">
-                <h2 className="kicker text-blanc/50">{d.footer.follow}</h2>
+                <h2 className="kicker text-blanc/60">{d.footer.follow}</h2>
                 <ul className="mt-5 space-y-3 text-[0.95rem]">
                   {epoques.socials.map((s) => (
                     <li key={s.platform}>

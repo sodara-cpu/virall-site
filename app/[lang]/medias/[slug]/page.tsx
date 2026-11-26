@@ -45,16 +45,16 @@ export default async function BrandPage({ params }: { params: Promise<{ lang: Lo
         <div className="grain absolute inset-0">
           <Picture id={b.image} lang={lang} fill priority sizes="100vw" imgClassName="slow-push" captionClassName="!bottom-auto !top-24" />
         </div>
-        <div aria-hidden className="absolute inset-0" style={{ background: `linear-gradient(180deg, rgba(20,27,45,.35) 0%, rgba(20,27,45,.1) 40%, ${b.color}E6 100%)` }} />
+        <div aria-hidden className="absolute inset-0" style={{ background: `linear-gradient(180deg, rgba(20,27,45,.35) 0%, rgba(20,27,45,.1) 40%, ${b.color}B3 100%)` }} />
         <div className="wrap relative pb-14 pt-40 lg:pb-20">
           <Link href={href(lang, routes.media)} className="kicker link-underline text-blanc/75">
             ← {d.media.title}
           </Link>
           <img src={asset(b.logoOnDark)} alt={`VIRALL ${b.name}`} width={792} height={300} className="mt-8 h-20 w-auto lg:h-28" />
           <div className="mt-8 grid gap-6 lg:grid-cols-12 lg:items-end">
-            <p className="display-italic text-[clamp(1.8rem,3.4vw,3rem)] leading-tight lg:col-span-8">{b.tagline[lang]}</p>
+            <p className="dek italic text-[clamp(1.6rem,2.8vw,2.4rem)] leading-tight lg:col-span-8">{b.tagline[lang]}</p>
             <p className="lg:col-span-4 lg:text-right">
-              <span className="rounded-full border border-blanc/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em]">{status}</span>
+              <span className="text-[0.95rem] font-semibold">{status}</span>
             </p>
           </div>
         </div>
@@ -64,8 +64,8 @@ export default async function BrandPage({ params }: { params: Promise<{ lang: Lo
       <section className="bg-blanc py-24 lg:py-32">
         <div className="wrap grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-7" data-reveal>
-            <p className="kicker" style={{ color: `color-mix(in srgb, ${b.color} 80%, #141B2D)` }}>{d.media.mission}</p>
-            <p className="display mt-6 text-[clamp(1.9rem,3.4vw,3.1rem)] leading-[1.12]">{b.mission[lang]}</p>
+            <p className="rubric" style={{ color: `color-mix(in srgb, ${b.color} 80%, #141B2D)` }}>{d.media.mission}</p>
+            <p className="display mt-4 text-[clamp(1.8rem,3vw,2.7rem)] leading-[1.14]">{b.mission[lang]}</p>
           </div>
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-4 lg:col-start-9 lg:grid-cols-1">
             {[
@@ -76,8 +76,7 @@ export default async function BrandPage({ params }: { params: Promise<{ lang: Lo
                 <h2 className="kicker text-ardoise">{g.title}</h2>
                 <ul className="mt-4">
                   {g.items.map((it) => (
-                    <li key={it} className="hairline flex items-center gap-3 border-t py-3 text-[1.02rem]">
-                      <span aria-hidden className="h-1.5 w-1.5 rounded-[1px]" style={{ background: b.color }} />
+                    <li key={it} className="hairline border-t py-3 text-[1.02rem]">
                       {it}
                     </li>
                   ))}
@@ -93,12 +92,12 @@ export default async function BrandPage({ params }: { params: Promise<{ lang: Lo
         <section className="bg-blanc pb-24 lg:pb-32">
           <div className="wrap grid gap-5 lg:grid-cols-12">
             {(video ? ["__video", ...b.gallery.slice(0, 2)] : b.gallery.slice(0, 3)).map((g, i) => {
-              const cls = `grain relative overflow-hidden rounded-[2px] ${i === 0 ? "aspect-[4/5] lg:col-span-5" : i === 1 ? "aspect-[4/5] lg:col-span-4 lg:mt-24" : "aspect-[4/5] lg:col-span-3 lg:mt-48"}`;
+              const cls = `grain relative overflow-hidden ${i === 0 ? "aspect-[4/5] lg:col-span-5" : i === 1 ? "aspect-[4/5] lg:col-span-4 lg:mt-24" : "aspect-[4/5] lg:col-span-3 lg:mt-48"}`;
               if (g === "__video" && video)
                 return (
                   <figure key={g} data-reveal className={cls}>
                     <AmbientVideo src={video.src} poster={video.poster} label={video.label[lang]} className="h-full w-full" playLabel={d.common.play} pauseLabel={d.common.pause} />
-                    <figcaption className="pointer-events-none absolute right-3 top-3 z-10 rounded-full bg-encre/55 px-2.5 py-1 text-[0.65rem] font-medium text-blanc/85 backdrop-blur-sm">
+                    <figcaption className="pointer-events-none absolute right-0 top-0 z-10 bg-encre/70 px-2 py-1 text-[0.68rem] leading-tight text-blanc/90">
                       {d.common.excerpt} · {d.common.aiShortReconstitution}
                     </figcaption>
                   </figure>
@@ -165,13 +164,12 @@ export default async function BrandPage({ params }: { params: Promise<{ lang: Lo
               <p className="mt-5 text-ardoise">{d.media.noNumbers}</p>
             )}
           </div>
-          <div className="relative overflow-hidden rounded-[2px] p-10 text-blanc lg:col-span-6 lg:col-start-7 lg:p-14" style={{ background: b.color }} data-reveal>
-            <Reel className="pointer-events-none absolute -bottom-16 -right-16 w-72 text-blanc/10" strokeWidth={5} />
-            <h2 className="kicker text-blanc/70">
+          <div className="relative overflow-hidden p-10 text-blanc lg:col-span-6 lg:col-start-7 lg:p-14" style={{ background: b.color }} data-reveal>
+            <h2 className="rubric text-blanc/85">
               {d.media.collaborate} VIRALL {b.name}
             </h2>
             <p className="display relative mt-6 text-[clamp(1.8rem,2.8vw,2.6rem)] leading-[1.15]">{b.collaboration[lang]}</p>
-            <Link href={href(lang, routes.contact)} className="btn relative mt-10 bg-blanc text-encre hover:bg-brume">
+            <Link href={href(lang, routes.contact)} className="btn relative mt-10 bg-blanc text-encre hover:bg-papier">
               {d.common.contactUs}
               <span aria-hidden className="btn-arrow">→</span>
             </Link>
