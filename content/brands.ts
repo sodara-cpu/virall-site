@@ -5,7 +5,7 @@ import type { Locale } from "./i18n";
 
 export type BrandStatus = "launch" | "development";
 
-export type Social = { platform: "YouTube" | "TikTok" | "Instagram" | "Facebook" | "LinkedIn" | "X"; url: string; handle: string };
+export type Social = { platform: "YouTube" | "TikTok" | "Instagram" | "Facebook" | "LinkedIn" | "X" | "Threads"; url: string; handle: string };
 
 export type Brand = {
   slug: string;
@@ -71,6 +71,8 @@ export const brands: Brand[] = [
       { platform: "TikTok", url: "https://www.tiktok.com/@virall.epoques", handle: "@virall.epoques" },
       { platform: "Instagram", url: "https://www.instagram.com/virall.epoques/", handle: "@virall.epoques" },
       { platform: "Facebook", url: "https://www.facebook.com/profile.php?id=61596877020510", handle: "Virall Époques" },
+      { platform: "X", url: "https://x.com/VirallEpoques", handle: "@VirallEpoques" },
+      { platform: "Threads", url: "https://www.threads.com/@virall.epoques", handle: "@virall.epoques" },
     ],
     stats: { followers: null, views: null, videos: null, asOf: null },
   },

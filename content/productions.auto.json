@@ -1,6 +1,555 @@
 {
- "genere_le": "2026-11-26T08:07:27.342Z",
- "productions": [],
- "sources": {},
- "images": {}
+ "genere_le": "2026-11-28T03:07:01.362Z",
+ "productions": [
+  {
+   "slug": "lady-be-good-1943",
+   "brand": "epoques",
+   "title": {
+    "fr": "Bombardier retrouvé presque intact, 15 ans après",
+    "en": "Bombardier retrouvé presque intact, 15 ans après"
+   },
+   "summary": {
+    "fr": "Avril 1943 : un bombardier américain, le Lady Be Good, disparaît au retour de sa première mission, lancée depuis la Libye contre l'Italie. Dans la nuit, l'équipage dépasse sa base et continue vers le sud, au-dessus du désert. À court d'essence, les neuf hommes sautent en parachute. En 1958, des géologues qui cherchent du pétrole repèrent l'avion presque intact, à plus de 600 km de sa base. Les corps de huit aviateurs sont retrouvés en 1960 ; le neuvième ne l'a jamais été. Le carnet du copilote Robert Toner raconte les huit jours de marche du groupe.",
+    "en": "Avril 1943 : un bombardier américain, le Lady Be Good, disparaît au retour de sa première mission, lancée depuis la Libye contre l'Italie. Dans la nuit, l'équipage dépasse sa base et continue vers le sud, au-dessus du désert. À court d'essence, les neuf hommes sautent en parachute. En 1958, des géologues qui cherchent du pétrole repèrent l'avion presque intact, à plus de 600 km de sa base. Les corps de huit aviateurs sont retrouvés en 1960 ; le neuvième ne l'a jamais été. Le carnet du copilote Robert Toner raconte les huit jours de marche du groupe."
+   },
+   "period": {
+    "fr": "1943 – 1960",
+    "en": "1943 – 1960"
+   },
+   "category": {
+    "fr": "Histoire",
+    "en": "History"
+   },
+   "format": "vertical",
+   "durationSec": 105,
+   "status": "soon",
+   "publishedAt": null,
+   "image": "auto_lady_be_good_1943_1",
+   "links": []
+  },
+  {
+   "slug": "enfants-caches-saisonniers",
+   "brand": "epoques",
+   "title": {
+    "fr": "En Suisse, ils ne devaient pas faire de bruit",
+    "en": "En Suisse, ils ne devaient pas faire de bruit"
+   },
+   "summary": {
+    "fr": "Fin des années 1980, en Suisse. Luigi Fragale, fils d'un saisonnier italien, vit caché deux ans et demi avec sa mère et son petit frère : la loi interdit aux saisonniers de faire venir leur famille. Consigne à la maison : ne pas faire de bruit. Dénoncée à la commune, la famille risque l'expulsion. Elle obtient finalement une autorisation de séjour : le patron du père, qui lui avait prêté de l'argent, craignait de ne jamais être remboursé. Le statut de saisonnier a duré jusqu'en 2002 ; selon les historiens, des milliers d'enfants ont vécu cachés.",
+    "en": "Fin des années 1980, en Suisse. Luigi Fragale, fils d'un saisonnier italien, vit caché deux ans et demi avec sa mère et son petit frère : la loi interdit aux saisonniers de faire venir leur famille. Consigne à la maison : ne pas faire de bruit. Dénoncée à la commune, la famille risque l'expulsion. Elle obtient finalement une autorisation de séjour : le patron du père, qui lui avait prêté de l'argent, craignait de ne jamais être remboursé. Le statut de saisonnier a duré jusqu'en 2002 ; selon les historiens, des milliers d'enfants ont vécu cachés."
+   },
+   "period": {
+    "fr": "1980 – 2002",
+    "en": "1980 – 2002"
+   },
+   "category": {
+    "fr": "Histoire",
+    "en": "History"
+   },
+   "format": "vertical",
+   "durationSec": 102,
+   "status": "soon",
+   "publishedAt": null,
+   "image": "auto_enfants_caches_saisonniers_1",
+   "links": []
+  },
+  {
+   "slug": "lal-bihari-mort-vivant",
+   "brand": "epoques",
+   "title": {
+    "fr": "Il s'est battu des années pour exister",
+    "en": "Il s'est battu des années pour exister"
+   },
+   "summary": {
+    "fr": "Nord de l'Inde. Lal Bihari, jeune tisserand, demande un prêt. Le registre des terres dit qu'il est mort en 1976 : selon lui, son oncle a payé un employé trois cents roupies pour prendre sa terre. Pendant près de vingt ans, il multiplie les actions pour être reconnu vivant : il tente de se faire arrêter, demande une pension de veuve pour sa femme, jette des tracts sur les députés, ajoute « Mritak » (« le mort ») à son nom et se présente aux élections de 1989 contre Rajiv Gandhi. En 1994, l'administration le déclare vivant. Il laisse sa terre à sa famille.",
+    "en": "Nord de l'Inde. Lal Bihari, jeune tisserand, demande un prêt. Le registre des terres dit qu'il est mort en 1976 : selon lui, son oncle a payé un employé trois cents roupies pour prendre sa terre. Pendant près de vingt ans, il multiplie les actions pour être reconnu vivant : il tente de se faire arrêter, demande une pension de veuve pour sa femme, jette des tracts sur les députés, ajoute « Mritak » (« le mort ») à son nom et se présente aux élections de 1989 contre Rajiv Gandhi. En 1994, l'administration le déclare vivant. Il laisse sa terre à sa famille."
+   },
+   "period": {
+    "fr": "1976 – 1994",
+    "en": "1976 – 1994"
+   },
+   "category": {
+    "fr": "Histoire",
+    "en": "History"
+   },
+   "format": "vertical",
+   "durationSec": 95,
+   "status": "soon",
+   "publishedAt": null,
+   "image": "auto_lal_bihari_mort_vivant_1",
+   "links": []
+  }
+ ],
+ "sources": {
+  "lady-be-good-1943": {
+   "status": "review",
+   "updated": "2026-11-28",
+   "established": {
+    "fr": [
+     "Le carnet de Robert Toner commence, à la date du 4 avril 1943 : « got lost returning, out of gas, jumped, landed in the desert at 2:00 in morning » (traduit : « Perdus au retour, plus d'essence, on a sauté »)",
+     "Robert Toner est le copilote du Lady Be Good",
+     "Le Lady Be Good est un bombardier B-24D américain du 376e groupe de bombardement, basé à Soluch (Libye)",
+     "En avril 1943, les bombardiers américains basés en Libye attaquent l'Italie (mission du 4 avril sur Naples)",
+     "Le 4 avril 1943 est la première mission du Lady Be Good",
+     "Au retour, de nuit, l'équipage dépasse sa base et continue vers le sud au-dessus du désert",
+     "À court d'essence, les neuf hommes sautent en parachute",
+     "L'avion continue sans équipage et s'écrase (se pose sur le ventre) dans le désert",
+     "En 1958, des géologues britanniques d'une compagnie pétrolière repèrent l'épave depuis un avion",
+     "L'épave est presque intacte",
+     "L'épave est à plus de six cents kilomètres de sa base",
+     "À bord : de l'eau, des vivres, une radio en état de marche",
+     "Aucun membre de l'équipage n'est dans ou près de l'épave",
+     "En 1960, des équipes d'une compagnie pétrolière (BP) retrouvent cinq corps : Hatton, Toner, Hays, Adams, LaMotte",
+     "Les cinq sont retrouvés à environ 78 miles (environ 125 km) du point de saut ; le script dit « plus de cent vingt kilomètres au nord »",
+     "Huit hommes se retrouvent au sol et marchent ensemble vers le nord avec très peu d'eau",
+     "Le neuvième (Woravka) ne rejoint jamais le groupe ; il est retrouvé seul en août 1960",
+     "Trois hommes (Shelley, Ripslinger, Moore) continuent seuls pour chercher de l'aide",
+     "Deux des trois sont retrouvés en mai 1960, l'un (Shelley) à plus de 170 km du point de saut",
+     "Le troisième (Moore) n'a jamais été retrouvé",
+     "Le carnet de Toner est retrouvé avec les cinq corps",
+     "Le groupe a survécu huit jours ; le carnet de Toner couvre du 4-5 au 12 avril 1943",
+     "Dernière entrée du carnet, lundi 12 avril 1943 : « No help yet, very cold nite » (traduit : « Pas encore d'aide. Nuit très froide. »)"
+    ],
+    "en": [
+     "Le carnet de Robert Toner commence, à la date du 4 avril 1943 : « got lost returning, out of gas, jumped, landed in the desert at 2:00 in morning » (traduit : « Perdus au retour, plus d'essence, on a sauté »)",
+     "Robert Toner est le copilote du Lady Be Good",
+     "Le Lady Be Good est un bombardier B-24D américain du 376e groupe de bombardement, basé à Soluch (Libye)",
+     "En avril 1943, les bombardiers américains basés en Libye attaquent l'Italie (mission du 4 avril sur Naples)",
+     "Le 4 avril 1943 est la première mission du Lady Be Good",
+     "Au retour, de nuit, l'équipage dépasse sa base et continue vers le sud au-dessus du désert",
+     "À court d'essence, les neuf hommes sautent en parachute",
+     "L'avion continue sans équipage et s'écrase (se pose sur le ventre) dans le désert",
+     "En 1958, des géologues britanniques d'une compagnie pétrolière repèrent l'épave depuis un avion",
+     "L'épave est presque intacte",
+     "L'épave est à plus de six cents kilomètres de sa base",
+     "À bord : de l'eau, des vivres, une radio en état de marche",
+     "Aucun membre de l'équipage n'est dans ou près de l'épave",
+     "En 1960, des équipes d'une compagnie pétrolière (BP) retrouvent cinq corps : Hatton, Toner, Hays, Adams, LaMotte",
+     "Les cinq sont retrouvés à environ 78 miles (environ 125 km) du point de saut ; le script dit « plus de cent vingt kilomètres au nord »",
+     "Huit hommes se retrouvent au sol et marchent ensemble vers le nord avec très peu d'eau",
+     "Le neuvième (Woravka) ne rejoint jamais le groupe ; il est retrouvé seul en août 1960",
+     "Trois hommes (Shelley, Ripslinger, Moore) continuent seuls pour chercher de l'aide",
+     "Deux des trois sont retrouvés en mai 1960, l'un (Shelley) à plus de 170 km du point de saut",
+     "Le troisième (Moore) n'a jamais été retrouvé",
+     "Le carnet de Toner est retrouvé avec les cinq corps",
+     "Le groupe a survécu huit jours ; le carnet de Toner couvre du 4-5 au 12 avril 1943",
+     "Dernière entrée du carnet, lundi 12 avril 1943 : « No help yet, very cold nite » (traduit : « Pas encore d'aide. Nuit très froide. »)"
+    ]
+   },
+   "reading": {
+    "fr": "Leur erreur n'était pas la direction mais la distance",
+    "en": "Leur erreur n'était pas la direction mais la distance"
+   },
+   "references": [
+    {
+     "kind": "primaire",
+     "title": "Archives nationales américaines, The Unwritten Record, « Lost and Found: The Story of Lady Be Good and Her Crew » (16/06/2017), réponse de l'autrice citant le carnet"
+    },
+    {
+     "kind": "article",
+     "title": "Air & Space Forces Magazine (J. Lowery, 01/02/2014) : saut à 2 h du matin le 5 avril 1943"
+    },
+    {
+     "kind": "primaire",
+     "title": "Archives nationales américaines (liste de l'équipage)"
+    },
+    {
+     "kind": "article",
+     "title": "Air & Space Forces Magazine"
+    },
+    {
+     "kind": "institution",
+     "title": "Musée national de l'US Air Force, fiche « Lady Be Good »"
+    },
+    {
+     "kind": "primaire",
+     "title": "Archives nationales américaines"
+    },
+    {
+     "kind": "article",
+     "title": "Air & Space Forces Magazine (Soluch, à 34 miles au sud-est de Benghazi)"
+    },
+    {
+     "kind": "institution",
+     "title": "Musée national de l'US Air Force (25 B-24D contre le port de Naples)"
+    },
+    {
+     "kind": "primaire",
+     "title": "Archives nationales américaines (« first and final mission »)"
+    },
+    {
+     "kind": "article",
+     "title": "Air & Space Forces Magazine (« first—and last—combat mission »)"
+    },
+    {
+     "kind": "institution",
+     "title": "Musée national de l'US Air Force (« lost in the dark », « flown over their base and southward into the desert »)"
+    },
+    {
+     "kind": "primaire",
+     "title": "Archives nationales américaines (« overshot Soluch », nuit)"
+    },
+    {
+     "kind": "article",
+     "title": "Air & Space Forces (erreur de navigation, nuit couverte)"
+    },
+    {
+     "kind": "primaire",
+     "title": "Carnet de Toner cité par les Archives nationales (« out of gas, jumped »)"
+    },
+    {
+     "kind": "primaire",
+     "title": "Archives nationales (« all nine men made the decision to bail out »)"
+    },
+    {
+     "kind": "article",
+     "title": "Air & Space Forces (saut à 2 h du matin)"
+    },
+    {
+     "kind": "primaire",
+     "title": "Archives nationales (les hommes atterrissent à environ 15 miles du lieu du crash)"
+    },
+    {
+     "kind": "article",
+     "title": "Air & Space Forces (« bellied-in to the sand »)"
+    },
+    {
+     "kind": "primaire",
+     "title": "Archives nationales (novembre 1958, D'Arcy Oil Company)"
+    },
+    {
+     "kind": "institution",
+     "title": "Musée de l'USAF (9 novembre 1958)"
+    }
+   ]
+  },
+  "enfants-caches-saisonniers": {
+   "status": "review",
+   "updated": "2026-11-28",
+   "established": {
+    "fr": [
+     "« Enfant, j'ai été pratiquement enfermé pendant deux ans et demi. », phrase de Luigi Fragale",
+     "Luigi Fragale, fils d'un saisonnier italien, arrive en Suisse à la fin des années 1980 et vit caché avec sa mère et son petit frère dans un petit appartement",
+     "Le statut de saisonnier découle de la loi fédérale de 1931 sur le séjour et l'établissement des étrangers ; il s'applique dès 1934",
+     "Un saisonnier peut séjourner au plus neuf mois par an",
+     "Le regroupement familial est interdit aux saisonniers",
+     "Consigne : ne pas faire trop de bruit, pour que personne ne se sente dérangé ; la famille vit dans la crainte d'être découverte",
+     "« Nous étions presque toujours à l'intérieur. »",
+     "Il ne sort que dans un petit pré juste devant la maison",
+     "Sans assurance, pas de médecin ni d'hôpital ; prudence pour ne pas se blesser en jouant",
+     "Un autre saisonnier italien se plaint de la famille à la commune ; la famille est menacée d'expulsion",
+     "Le père menace de repartir en Italie si sa famille doit partir ; son employeur lui a prêté de l'argent pour une maison en Calabre et craint de ne pas le récupérer ; l'autorisation de séjour est alors obtenue",
+     "Le statut de saisonnier prend fin en 2002 avec la libre circulation des personnes entre la Suisse et l'Union européenne",
+     "À l'école, il reste très renfermé et ne peut presque pas prononcer un mot ; la peur de mal faire ne disparaît pas tout de suite",
+     "« Une politique qui sépare les enfants de leurs parents et qui fait en sorte que les familles doivent vivre cachées ne doit plus jamais exister. »"
+    ],
+    "en": [
+     "« Enfant, j'ai été pratiquement enfermé pendant deux ans et demi. », phrase de Luigi Fragale",
+     "Luigi Fragale, fils d'un saisonnier italien, arrive en Suisse à la fin des années 1980 et vit caché avec sa mère et son petit frère dans un petit appartement",
+     "Le statut de saisonnier découle de la loi fédérale de 1931 sur le séjour et l'établissement des étrangers ; il s'applique dès 1934",
+     "Un saisonnier peut séjourner au plus neuf mois par an",
+     "Le regroupement familial est interdit aux saisonniers",
+     "Consigne : ne pas faire trop de bruit, pour que personne ne se sente dérangé ; la famille vit dans la crainte d'être découverte",
+     "« Nous étions presque toujours à l'intérieur. »",
+     "Il ne sort que dans un petit pré juste devant la maison",
+     "Sans assurance, pas de médecin ni d'hôpital ; prudence pour ne pas se blesser en jouant",
+     "Un autre saisonnier italien se plaint de la famille à la commune ; la famille est menacée d'expulsion",
+     "Le père menace de repartir en Italie si sa famille doit partir ; son employeur lui a prêté de l'argent pour une maison en Calabre et craint de ne pas le récupérer ; l'autorisation de séjour est alors obtenue",
+     "Le statut de saisonnier prend fin en 2002 avec la libre circulation des personnes entre la Suisse et l'Union européenne",
+     "À l'école, il reste très renfermé et ne peut presque pas prononcer un mot ; la peur de mal faire ne disparaît pas tout de suite",
+     "« Une politique qui sépare les enfants de leurs parents et qui fait en sorte que les familles doivent vivre cachées ne doit plus jamais exister. »"
+    ]
+   },
+   "debated": {
+    "fr": [
+     "Des milliers d'enfants de saisonniers ont vécu cachés en Suisse"
+    ],
+    "en": [
+     "Des milliers d'enfants de saisonniers ont vécu cachés en Suisse"
+    ]
+   },
+   "reading": {
+    "fr": "Ce n'est ni la loi ni la pitié, mais la peur du patron de perdre son argent, qui fait sortir l'enfant de sa cachette La Suisse voulait des travailleurs, pas leurs enfants",
+    "en": "Ce n'est ni la loi ni la pitié, mais la peur du patron de perdre son argent, qui fait sortir l'enfant de sa cachette La Suisse voulait des travailleurs, pas leurs enfants"
+   },
+   "references": [
+    {
+     "kind": "article",
+     "title": "Blick (édition française), T. Schlittler, « Son père était saisonnier », 16/01/2023, citation directe"
+    },
+    {
+     "kind": "article",
+     "title": "Même article : « Nous avons dû vivre cachés »"
+    },
+    {
+     "kind": "article",
+     "title": "Blick, 16/01/2023 (Bellach, canton de Soleure"
+    },
+    {
+     "kind": "article",
+     "title": "illégalité jusqu'en 1990)"
+    },
+    {
+     "kind": "article",
+     "title": "Aucune (témoignage)"
+    },
+    {
+     "kind": "article",
+     "title": "swissinfo, D. Mariani, 20/11/2021 (loi de 1931)"
+    },
+    {
+     "kind": "article",
+     "title": "Blick, 16/01/2023 (statut introduit en 1934)"
+    },
+    {
+     "kind": "article",
+     "title": "Message du Conseil fédéral du 19/06/1978, FF 1978 II 165"
+    },
+    {
+     "kind": "article",
+     "title": "swissinfo, 20/11/2021"
+    },
+    {
+     "kind": "article",
+     "title": "Blick, 16/01/2023"
+    },
+    {
+     "kind": "article",
+     "title": "Blick, 16/01/2023 (familles séparées)"
+    },
+    {
+     "kind": "article",
+     "title": "Message du Conseil fédéral 1978"
+    },
+    {
+     "kind": "article",
+     "title": "Blick, 16/01/2023 (récit de Luigi, discours indirect)"
+    },
+    {
+     "kind": "article",
+     "title": "Le Courrier, J. Jeannet, 15/06/2022 : consigne « Surtout ne fais pas de bruit » entendue par d'autres enfants cachés"
+    },
+    {
+     "kind": "article",
+     "title": "Blick, 16/01/2023, citation directe"
+    },
+    {
+     "kind": "article",
+     "title": "Blick, 16/01/2023 (« seulement pour aller dans un petit pré juste devant la maison »)"
+    },
+    {
+     "kind": "article",
+     "title": "Blick, 16/01/2023 (« Nous n'étions pas assurés et ne pouvions donc pas aller chez le médecin ou à l'hôpital »)"
+    },
+    {
+     "kind": "article",
+     "title": "Blick, 16/01/2023 (plainte d'un compatriote auprès de la commune, « trahison »)"
+    },
+    {
+     "kind": "article",
+     "title": "Blick, 16/01/2023, citations directes de Luigi Fragale"
+    },
+    {
+     "kind": "article",
+     "title": "Blick, 16/01/2023 (« L'employeur craignait que sinon, il ne récupérerait jamais son argent »)"
+    }
+   ]
+  },
+  "lal-bihari-mort-vivant": {
+   "status": "review",
+   "updated": "2026-11-28",
+   "established": {
+    "fr": [
+     "« The price of my death was Rs 300 » (traduit : « Le prix de ma mort, c'était trois cents roupies »), phrase de Lal Bihari",
+     "Lal Bihari est un jeune tisserand (métier à tisser, saris de Bénarès) d'un village du district d'Azamgarh, dans l'Uttar Pradesh, au nord de l'Inde",
+     "Il découvre sa mort administrative en demandant un document pour un prêt, vers 21 ou 22 ans",
+     "Selon le registre, il est mort en 1976",
+     "Son oncle a payé un employé (pot-de-vin de 300 roupies) pour le faire déclarer mort et prendre sa terre",
+     "Il cherche une trace officielle de son existence (procès, arrestation)",
+     "Il paie un policier pour se faire arrêter ; le policier comprend son but et lui rend l'argent",
+     "Il demande une pension de veuve pour sa femme ; refusée, car elle porte encore le vermillon des femmes mariées",
+     "Il jette des tracts sur les députés de l'Assemblée de l'Uttar Pradesh (« Mujhe zinda karo », traduit : « Rendez-moi vivant ») et passe quelques heures en prison",
+     "Il ajoute à son nom le mot « Mritak » (« le mort ») et fonde une association des morts (Mritak Sangh)",
+     "Il se présente aux élections de 1989 contre Rajiv Gandhi, alors chef du gouvernement indien (circonscription d'Amethi)",
+     "En 1994, l'administration le déclare vivant",
+     "Dix-huit ans séparent sa mort sur le papier (1976) de 1994",
+     "Il ne réclame pas sa terre et la laisse à sa famille",
+     "« People called me ghost and satan to my face. They laughed at me » (traduit, extrait : « On m'appelait fantôme. On riait de moi »)",
+     "Prix Ig Nobel de la paix 2003 (non cité dans le script)"
+    ],
+    "en": [
+     "« The price of my death was Rs 300 » (traduit : « Le prix de ma mort, c'était trois cents roupies »), phrase de Lal Bihari",
+     "Lal Bihari est un jeune tisserand (métier à tisser, saris de Bénarès) d'un village du district d'Azamgarh, dans l'Uttar Pradesh, au nord de l'Inde",
+     "Il découvre sa mort administrative en demandant un document pour un prêt, vers 21 ou 22 ans",
+     "Selon le registre, il est mort en 1976",
+     "Son oncle a payé un employé (pot-de-vin de 300 roupies) pour le faire déclarer mort et prendre sa terre",
+     "Il cherche une trace officielle de son existence (procès, arrestation)",
+     "Il paie un policier pour se faire arrêter ; le policier comprend son but et lui rend l'argent",
+     "Il demande une pension de veuve pour sa femme ; refusée, car elle porte encore le vermillon des femmes mariées",
+     "Il jette des tracts sur les députés de l'Assemblée de l'Uttar Pradesh (« Mujhe zinda karo », traduit : « Rendez-moi vivant ») et passe quelques heures en prison",
+     "Il ajoute à son nom le mot « Mritak » (« le mort ») et fonde une association des morts (Mritak Sangh)",
+     "Il se présente aux élections de 1989 contre Rajiv Gandhi, alors chef du gouvernement indien (circonscription d'Amethi)",
+     "En 1994, l'administration le déclare vivant",
+     "Dix-huit ans séparent sa mort sur le papier (1976) de 1994",
+     "Il ne réclame pas sa terre et la laisse à sa famille",
+     "« People called me ghost and satan to my face. They laughed at me » (traduit, extrait : « On m'appelait fantôme. On riait de moi »)",
+     "Prix Ig Nobel de la paix 2003 (non cité dans le script)"
+    ]
+   },
+   "reading": {
+    "fr": "Ce qu'il voulait retrouver, ce n'était pas un champ : c'était son existence",
+    "en": "Ce qu'il voulait retrouver, ce n'était pas un champ : c'était son existence"
+   },
+   "references": [
+    {
+     "kind": "article",
+     "title": "Open Magazine, « The Living Dead » (juin 2009), entretien avec Lal Bihari"
+    },
+    {
+     "kind": "article",
+     "title": "The Better India (11/01/2021) : « a bribe of Rs 300 for my uncle to usurp property »"
+    },
+    {
+     "kind": "article",
+     "title": "Open Magazine (« handloom business »"
+    },
+    {
+     "kind": "article",
+     "title": "village d'Amilo, Azamgarh)"
+    },
+    {
+     "kind": "article",
+     "title": "The Better India (tissage de saris de Bénarès)"
+    },
+    {
+     "kind": "article",
+     "title": "Time, 19/07/1999 (Amilo, Azamgarh)"
+    },
+    {
+     "kind": "article",
+     "title": "Open Magazine (22 ans, prêt pour son affaire de tissage, lekhpal de Khalilabad)"
+    },
+    {
+     "kind": "article",
+     "title": "The Better India (22 ans, prêt bancaire)"
+    },
+    {
+     "kind": "article",
+     "title": "Improbable Research citant Outlook (21 ans)"
+    },
+    {
+     "kind": "article",
+     "title": "Open Magazine (1976)"
+    },
+    {
+     "kind": "article",
+     "title": "Time (1976)"
+    },
+    {
+     "kind": "article",
+     "title": "Motherland Magazine (« On 30 July 1976, I was declared dead »)"
+    },
+    {
+     "kind": "article",
+     "title": "The Better India (1976)"
+    },
+    {
+     "kind": "article",
+     "title": "The Better India, citation de Lal Bihari (« a bribe of Rs 300 for my uncle to usurp property »)"
+    },
+    {
+     "kind": "article",
+     "title": "Time (l'oncle qui a pris sa terre)"
+    },
+    {
+     "kind": "encyclopedie",
+     "title": "Wikipédia (l'oncle a soudoyé un fonctionnaire)"
+    },
+    {
+     "kind": "article",
+     "title": "Open Magazine (la terre passe à ses cousins)"
+    },
+    {
+     "kind": "article",
+     "title": "Open Magazine"
+    },
+    {
+     "kind": "article",
+     "title": "The Better India"
+    },
+    {
+     "kind": "article",
+     "title": "Open Magazine (500 roupies pour être inculpé dans une affaire d'émeute, argent rendu quand le policier apprend le motif)"
+    }
+   ]
+  }
+ },
+ "images": {
+  "auto_lady_be_good_1943_1": {
+   "alt": {
+    "fr": "Reconstitution de la production « Bombardier retrouvé presque intact, 15 ans après »",
+    "en": "Reconstruction from the production \"Bombardier retrouvé presque intact, 15 ans après\""
+   },
+   "source": "production",
+   "provenance": "Extrait des productions VIRALL Époques (lady-be-good-1943)",
+   "licence": "Propriété de VIRALL",
+   "ai": true,
+   "reconstitution": true
+  },
+  "auto_lady_be_good_1943_2": {
+   "alt": {
+    "fr": "Reconstitution de la production « Bombardier retrouvé presque intact, 15 ans après »",
+    "en": "Reconstruction from the production \"Bombardier retrouvé presque intact, 15 ans après\""
+   },
+   "source": "production",
+   "provenance": "Extrait des productions VIRALL Époques (lady-be-good-1943)",
+   "licence": "Propriété de VIRALL",
+   "ai": true,
+   "reconstitution": true
+  },
+  "auto_enfants_caches_saisonniers_1": {
+   "alt": {
+    "fr": "Reconstitution de la production « En Suisse, ils ne devaient pas faire de bruit »",
+    "en": "Reconstruction from the production \"En Suisse, ils ne devaient pas faire de bruit\""
+   },
+   "source": "production",
+   "provenance": "Extrait des productions VIRALL Époques (enfants-caches-saisonniers)",
+   "licence": "Propriété de VIRALL",
+   "ai": true,
+   "reconstitution": true
+  },
+  "auto_enfants_caches_saisonniers_2": {
+   "alt": {
+    "fr": "Reconstitution de la production « En Suisse, ils ne devaient pas faire de bruit »",
+    "en": "Reconstruction from the production \"En Suisse, ils ne devaient pas faire de bruit\""
+   },
+   "source": "production",
+   "provenance": "Extrait des productions VIRALL Époques (enfants-caches-saisonniers)",
+   "licence": "Propriété de VIRALL",
+   "ai": true,
+   "reconstitution": true
+  },
+  "auto_lal_bihari_mort_vivant_1": {
+   "alt": {
+    "fr": "Reconstitution de la production « Il s'est battu des années pour exister »",
+    "en": "Reconstruction from the production \"Il s'est battu des années pour exister\""
+   },
+   "source": "production",
+   "provenance": "Extrait des productions VIRALL Époques (lal-bihari-mort-vivant)",
+   "licence": "Propriété de VIRALL",
+   "ai": true,
+   "reconstitution": true
+  },
+  "auto_lal_bihari_mort_vivant_2": {
+   "alt": {
+    "fr": "Reconstitution de la production « Il s'est battu des années pour exister »",
+    "en": "Reconstruction from the production \"Il s'est battu des années pour exister\""
+   },
+   "source": "production",
+   "provenance": "Extrait des productions VIRALL Époques (lal-bihari-mort-vivant)",
+   "licence": "Propriété de VIRALL",
+   "ai": true,
+   "reconstitution": true
+  }
+ }
 }
